@@ -1,0 +1,364 @@
+.footer {
+    background-color: rgb(255, 255, 255);
+    .nav {
+        display: flex;
+        width: 100%;
+        padding-bottom: 20px;
+        .top {
+            padding-top: 40px;
+            display: flex;
+            flex: 3 1 0%;
+            width: 100%;
+            max-width: 1232px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100%;
+            .market {
+                margin-right: 24px;
+                flex: 1 1 0%;
+                padding: 0px;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(105, 116, 136);
+                font-size: 11px;
+                .title {
+                    padding-bottom: 0px;
+                    margin-bottom: 16px;
+                    border-bottom: 0px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #5d3ebc;
+                }
+                .lists {
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    margin: 0px;
+                    padding: 0px;
+                    list-style-type: none;
+                    .listItem {
+                        padding: 0 0 16px 0;
+                        .socialLink {
+                            font-weight: 400;
+                            position: relative;
+                            outline: 0px;
+                            font-size: 14px;
+                            line-height: 16px;
+                            color: rgb(93, 62, 188);
+                            text-decoration: none;
+                            .appMarket {
+                                background-color: transparent;
+                                width: 160px;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                    .listItem:nth-child(3) {
+                        padding: 0;
+                    }
+                }
+            }
+            .footerMenus {
+                margin-right: 24px;
+                flex: 1 1 0%;
+                padding: 0px;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(105, 116, 136);
+                font-size: 11px;
+                .title {
+                    padding-bottom: 0px;
+                    margin-bottom: 16px;
+                    border-bottom: 0px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #5d3ebc;
+                }
+                .lists {
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    margin: 0px;
+                    padding: 0px;
+                    .listItem {
+                        padding-bottom: 16px;
+                        border-bottom: 0px;
+                        padding-top: 0px;
+                        .link {
+                            font-weight: 400;
+                            position: relative;
+                            outline: 0px;
+                            font-size: 14px;
+                            line-height: 16px;
+                            color: rgb(93, 62, 188);
+                            text-decoration: none;
+                            .text {
+                                color: #191919;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+            .etbisMenu {
+                .etbisLink {
+                    font-weight: 400;
+                    display: block;
+                    padding: 16px;
+                    background: rgb(255, 255, 255);
+                    box-shadow: 0px 1px 6px rgb(105 116 136 / 15%);
+                    border-radius: 8px;
+                    position: relative;
+                    outline: 0px;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: rgb(93, 62, 188);
+                    text-decoration: none;
+                    .etbisFigure {
+                        width: 72px;
+                        height: 84px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            border-radius: 0px;
+                            background: transparent;
+                            animation: 0s ease 0s 1 normal none running none;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+    .article {
+        .bottom {
+            display: flex;
+            align-items: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-top: 1px solid #f3f0fe;
+            width: 100%;
+            max-width: 1232px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100%;
+            .copyright {
+                font-size: 13px;
+                font-weight: 400;
+                margin-right: 12px;
+                line-height: 18px;
+                color: rgb(82, 82, 82);
+            }
+            .listDiv {
+                padding: 0px;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(105, 116, 136);
+                font-size: 11px;
+                .list {
+                    display: flex;
+                    padding: 0px;
+                    margin: 0px;
+                    list-style-type: none;
+                    counter-reset: list 0;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: rgb(62, 62, 62);
+                    .listItem {
+                        margin-left: 0px;
+                        padding-right: 12px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0px;
+                        border: 0px;
+                        position: relative;
+                        &::before {
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 50%;
+                            margin-right: 12px;
+                            background: rgb(93, 62, 188);
+                            counter-increment: list 1;
+                            content: "";
+                            display: inline-block;
+                            position: relative;
+                            color: rgb(93, 62, 188);
+                        }
+                        .listItemDiv {
+                            .listLink {
+                                position: relative;
+                                outline: 0px;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: rgb(93, 62, 188);
+                                text-decoration: none;
+                                .info {
+                                    color: #5d3ebc;
+                                    font-size: 13px;
+                                    font-weight: 400;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .socialDiv {
+                flex: 1 1 0%;
+                font-weight: 600;
+                line-height: 18px;
+                color: rgb(105, 116, 136);
+                font-size: 11px;
+                padding: 0;
+                .list {
+                    justify-content: flex-end;
+                    padding: 0px;
+                    display: flex;
+                    margin: 0px;
+                    list-style-type: none;
+                    .listItem1, .listItem2, .listItem3 {
+                        margin-left: 0px;
+                        height: 32px;
+                        border-radius: 8px;
+                        transition: background-color 200ms ease 0s, color 200ms ease 0s;
+                        display: flex;
+                        align-items: center;
+                        padding: 0px;
+                        border: 0px;
+                        width: 32px;
+                        .listItemDiv {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #697488;
+                            .listItemUrl {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #697488;
+                                position: relative;
+                                outline: 0px;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 16px;
+                                text-decoration: none;
+                                .listItemFacebook, .listItemTwitter, .listItemInstagram {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    min-width: 24px;
+                                    min-height: 24px;
+                                    .facebookIcon, .twitterIcon, .instagramIcon {
+                                        fill: currentcolor;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .listItem4 {
+                        height: 32px;
+                        border-radius: 8px;
+                        transition: background-color 200ms ease 0s, color 200ms ease 0s;
+                        display: flex;
+                        align-items: center;
+                        padding: 0px;
+                        border: 0px;
+                        margin-left: 10px;
+                        .listItemLanguage {
+                            border: 1px solid #f3f0fe;
+                            border-radius: 8px;
+                            height: 32px;
+                            user-select: none;
+                            display: inline-flex;
+                            color: rgb(93, 62, 188);
+                            background-color: transparent;
+                            padding: 0px;
+                            overflow: initial;
+                            .languageButton {
+                                padding: 0px;
+                                width: 100%;
+                                height: 100%;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: 400;
+                                line-height: 16px;
+                                outline: 0px;
+                                border-width: 0px;
+                                border-style: initial;
+                                border-image: initial;
+                                cursor: pointer;
+                                background-color: inherit;
+                                color: inherit;
+                                border-color: inherit;
+                                padding-right: 10px;
+                                padding-left: 10px;
+                                .language {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    min-width: 24px;
+                                    min-height: 24px;
+                                    .languageIcon {
+                                        color: #697488;
+                                        margin-right: 8px;
+                                        fill: currentcolor;
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+                                }
+                                .languageText {
+                                    color: #697488;
+                                    font-size: 13px;
+                                    font-weight: 400;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .listItem1:hover, .listItem2:hover, .listItem3:hover, .listItem4:hover {
+                        background-color: #f3f0fe;
+                        transition: background-color 200ms ease 0s;
+                        .listItemLanguage {
+                            .languageButton {
+                                .language {
+                                    .languageIcon {
+                                        color: #5d3ebc;    
+                                    }
+                                }
+                                .languageText {
+                                    color: #5d3ebc;
+                                }
+                            }
+                        }
+                        .listItemDiv {
+                            .listItemUrl {
+                                .listItemFacebook, .listItemTwitter, .listItemInstagram {
+                                    .facebookIcon, .twitterIcon, .instagramIcon {
+                                        color: #5d3ebc;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

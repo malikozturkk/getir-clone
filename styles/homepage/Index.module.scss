@@ -1,0 +1,47 @@
+.main {
+    display: grid;
+    flex: 1 1 0%;
+    margin-top: 24px;
+    grid-template-columns: 1fr min(100%, 1232px) 1fr;
+    .container {
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        grid-column: 2 / auto;
+        .contents {
+            flex-direction: row;
+            justify-content: space-between;
+            display: flex;
+            position: relative;
+            .categories {
+                top: 128px;
+                display: flex;
+                flex-direction: column;
+                align-self: flex-start;
+                flex: 1 0 100%;
+                max-width: 240px;
+                position: sticky;
+            }
+            .productList {
+                position: sticky;
+                top: 128px;
+                align-self: flex-start;
+                flex: 2 1 0%;
+                margin-right: 16px;
+                margin-left: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .basket {
+                top: 128px;
+                max-height: calc(100vh - 170px);
+                flex: 1 0 100%;
+                max-width: 300px;
+                position: sticky;
+                overflow-y: auto;
+            }
+        }
+    }
+  }

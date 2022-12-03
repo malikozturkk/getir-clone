@@ -1,0 +1,283 @@
+.header {
+    height: 75px;
+    color: rgb(255, 255, 255);
+    background-color: #5d3ebc;
+    padding-left: 32px;
+    padding-right: 32px;
+    flex-shrink: 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1232px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        .mainLogo {
+            margin-right: 15px;
+            flex: 1 1 0%;
+            display: flex;
+            .mainLogoElement {
+                display: flex;
+                align-items: center;
+                .mainLogoItem {
+                    display: inline-flex;
+                    .mainLogoUrl {
+                        position: relative;
+                        outline: 0px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: rgb(93, 62, 188);
+                        text-decoration: none;
+                        .mainLogoFigure {
+                            background-color: transparent;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            -webkit-box-align: center;
+                            align-items: center;
+                            -webkit-box-pack: center;
+                            justify-content: center;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        .mainSearchForm {
+            margin-right: 15px;
+            flex: 1 1 0%;
+            display: flex;
+            .mainSearchArticle {
+                display: flex;
+                margin-left: auto;
+                .form {
+                    display: flex;
+                    position: relative;
+                    @media (min-width: 767px) {
+                        width: 384px;
+                    }
+                    @media (min-width: 1023px) {
+                        width: 472px;
+                    }
+                    @media (min-width: 1264px) {
+                        width: 508px;
+                    }
+                    .container {
+                        width: 100%;
+                        display: flex;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        z-index: 2;
+                        position: relative;
+                        .searchFormMain {
+                            width: 100%;
+                            .main {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                                .general {
+                                    padding-right: 24px;
+                                    border: 0px;
+                                    height: 40px;
+                                    border-bottom-left-radius: 0px;
+                                    border-bottom-right-radius: 0px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    position: relative;
+                                    border-radius: 4px;
+                                    width: 100%;
+                                    background-color: rgb(255, 255, 255);
+                                    transition: all 0.2s ease 0s;
+                                    flex-direction: row;
+                                    .buttonDiv {
+                                        padding-right: 8px;
+                                        background-color: transparent;
+                                        color: rgb(93, 62, 188);
+                                        position: absolute;
+                                        left: 14px;
+                                        z-index: 1;
+                                        pointer-events: none;
+                                        user-select: none;
+                                        display: inline-flex;
+                                        border: 0px;
+                                        padding: 0px;
+                                        border-radius: 0px;
+                                        overflow: initial;
+                                        .button {
+                                            padding: 0px;
+                                            width: 100%;
+                                            height: 100%;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-weight: 600;
+                                            line-height: 16px;
+                                            outline: 0px;
+                                            border-width: 0px;
+                                            border-style: initial;
+                                            border-image: initial;
+                                            cursor: pointer;
+                                            background-color: inherit;
+                                            color: inherit;
+                                            border-color: inherit;
+                                            .searchDiv {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                min-width: 24px;
+                                                min-height: 24px;
+                                                .searchIcon {
+                                                    width: 14px;
+                                                    height: 14px;
+                                                    fill: #5D38C0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .inputDiv {
+                                        display: flex;
+                                        flex: 1 1 0%;
+                                        height: 100%;
+                                        .input {
+                                            padding-right: 40px;
+                                            width: 100%;
+                                            padding-left: 48px;
+                                            position: relative;
+                                            color: rgb(25, 25, 25);
+                                            line-height: 24px;
+                                            caret-color: rgb(120, 73, 247);
+                                            height: 100%;
+                                            border-radius: 4px;
+                                            border: none;
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .timeMain {
+                            grid-column: 1 / -1;
+                            position: absolute;
+                            right: 0px;
+                            box-shadow: none;
+                            z-index: 1;
+                            display: flex;
+                            background-color: rgb(255, 211, 0);
+                            height: 40px;
+                            border-radius: 8px;
+                            .home {
+                                border-top-left-radius: 0px;
+                                border-bottom-left-radius: 0px;
+                                display: flex;
+                                align-items: center;
+                                flex: 1 1 0%;
+                                background-color: rgb(255, 255, 255);
+                                border-top-right-radius: 20px;
+                                border-bottom-right-radius: 20px;
+                                overflow: hidden;
+                                user-select: none;
+                                border: 0px;
+                                padding: 0px;
+                                .homeButton {
+                                    justify-content: flex-start;
+                                    padding: 8px;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    font-weight: 600;
+                                    line-height: 16px;
+                                    outline: 0px;
+                                    border-width: 0px;
+                                    border-style: initial;
+                                    border-image: initial;
+                                    cursor: pointer;
+                                    background-color: inherit;
+                                    color: inherit;
+                                    border-color: inherit;
+                                    .homeFigure {
+                                        border-right: 0px;
+                                        display: flex;
+                                        width: 24px;
+                                        min-width: 24px;
+                                        height: 24px;
+                                        min-height: 24px;
+                                        margin-left: 8px;
+                                        padding-right: 6px;
+                                        margin: 0;
+                                        align-items: center;
+                                        justify-content: center;
+                                        overflow: hidden;
+                                    }
+                                    .homeLabel {
+                                        line-height: 24px;
+                                        max-width: 100px;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        display: inline;
+                                        margin-right: 8px;
+                                        margin-left: 8px;
+                                        font-weight: 600;
+                                        color: rgb(82, 82, 82);
+                                    }
+                                    .arrowDiv {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        min-width: 24px;
+                                        min-height: 24px;
+                                        .arrowIcon {
+                                            fill: currentcolor;
+                                            width: 12px;
+                                            height: 12px;
+                                        }
+                                    }
+                                }
+                            }
+                            .times {
+                                flex-direction: row;
+                                min-width: auto;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex: 0 1 0%;
+                                padding-right: 12px;
+                                padding-left: 12px;
+                                font-weight: 500;
+                                font-size: 11px;
+                                line-height: 14px;
+                                color: #5d3ebc;
+                                .tvs {
+                                    color: #5d3ebc;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                    margin-right: 4px;
+                                    flex: 1 1 0%;
+                                    min-width: 0px;
+                                    text-align: left;
+                                }
+                                .time {
+                                    color: #5d3ebc;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .spacer {
+            flex: 1 1 0%;
+            display: flex;
+        }
+    }
+}

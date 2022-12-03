@@ -1,0 +1,30 @@
+.container {
+  margin-bottom: 32px;
+  .title {
+    font-size: 14px;
+    color: rgb(25, 25, 25);
+    line-height: 20px;
+  }
+  .body {
+    text-align: center;
+    border: 2px solid #ffd300;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    padding: 64px 24px;
+    .content {
+      padding-top: 48px;
+    }
+    .basketInfo {
+      font-size: 16px;
+      line-height: 16px;
+      color: rgb(93, 62, 188);
+      margin-bottom: 12px;
+    }
+    .addedProduct {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: rgb(105, 116, 136);
+    }
+  }
+}
