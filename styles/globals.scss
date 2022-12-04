@@ -1,6 +1,12 @@
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "sans-serif";
   margin: 0;
+  background-color: #fafafa;
+  .Header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
   figure {
     margin: 0;
   }
@@ -24,6 +30,17 @@ body {
       &::before {
           color: #5d3ebc;
           content: '>'
+      }
+    }
+    .slick-list {
+      .slick-slide {
+        border: none;
+        &:focus {
+          border: none;
+        }
+        &:active {
+          border: none;
+        }
       }
     }
 }

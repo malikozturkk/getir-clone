@@ -1,0 +1,171 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .title {
+        margin-bottom: 8px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+            font-size: 14px;
+            color: rgb(25, 25, 25);
+            line-height: 20px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    .main {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 300px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgb(93 62 188 / 4%) 0px 6px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        .order {
+            width: 100%;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f0fe;
+            user-select: none;
+            display: inline-flex;
+            color: rgb(93, 62, 188);
+            background-color: transparent;
+            border-radius: 0px;
+            overflow: initial;
+            .orderButton {
+                text-align: left;
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                line-height: 16px;
+                outline: 0px;
+                border-width: 0px;
+                border-style: initial;
+                border-image: initial;
+                cursor: pointer;
+                background-color: inherit;
+                color: inherit;
+                border-color: inherit;
+                .orderMain {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    .icons {
+                        flex-shrink: 0;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        overflow: hidden;
+                        display: inline-flex;
+                        padding: 0px;
+                        background: rgb(255, 255, 255);
+                        border: 1px solid rgb(245, 245, 245);
+                        color: rgb(93, 56, 192);
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                    }
+                    .info {
+                        display: inline-flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-right: 8px;
+                        width: calc(100% - 88px);
+                        .time {
+                            font-weight: 400;
+                            font-size: 13px;
+                            line-height: 16px;
+                            color: #697488;
+                            margin-bottom: 4px;
+                        }
+                        .orderInfo {
+                            display: flex;
+                            flex-direction: column;
+                            min-width: 0px;
+                            width: 100%;
+                            .address {
+                                font-style: normal;
+                                line-height: 16px;
+                                color: #191919;
+                            }
+                        }
+                    }
+                    .amountMain {
+                        margin-left: auto;
+                        .amountArticle {
+                            flex-shrink: 0;
+                            display: inline-flex;
+                            border-radius: 8px;
+                            border: 1px solid #f3f0fe;
+                            background-color: #f3f0fe;
+                            height: 34px;
+                            overflow: hidden;
+                            .basket {
+                                background-color: rgb(255, 255, 255);
+                                width: 34px;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                overflow: hidden;
+                                .basketIcon {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: none;
+                                    border-radius: 0px;
+                                }
+                            }
+                            .amount {
+                                color: #5d3ebc;
+                                font-size: 15px;
+                                align-self: center;
+                                padding-right: 8px;
+                                padding-left: 8px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .all {
+            margin-top: 16px;
+            user-select: none;
+            display: inline-flex;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            background-color: rgb(243, 240, 254);
+            color: rgb(93, 62, 188);
+            box-shadow: none;
+            .allButton {
+                width: 100%;
+                height: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                line-height: 16px;
+                padding: 10px 16px;
+                outline: 0px;
+                border-width: 0px;
+                border-style: initial;
+                border-image: initial;
+                cursor: pointer;
+                background-color: inherit;
+                color: inherit;
+                border-color: inherit;
+            }
+        }
+    }
+}
