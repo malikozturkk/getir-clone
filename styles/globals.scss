@@ -10,4 +10,24 @@ body {
   a {
     text-decoration: none;
   }
+  .slick-slider {
+    .slick-prev {
+      font-weight: bold;
+      left: -40px;
+      &::before {
+          color: #5d3ebc;
+          content: '<'
+      }
+    }
+    .slick-next {
+      font-weight: bold;
+      &::before {
+          color: #5d3ebc;
+          content: '>'
+      }
+    }
+}
+.slider {
+    cursor: pointer;
+}
 }

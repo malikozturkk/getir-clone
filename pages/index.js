@@ -1,8 +1,9 @@
 import Basket from "../components/Basket"
 import ProductList from "../components/productList"
 import InfoWrapper from "../components/infoWrapper"
-import Slider from "../components/Slider"
+import Sliders from "../components/Slider"
 import Categories from "../components/Categories"
+import PastOrders from "../components/PastOrders"
 import home from "../styles/homepage/Index.module.scss"
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
       <InfoWrapper />
       <main className={home.main}>
         <div className={home.container}>
-          <Slider />
+          <Sliders />
           <div className={home.contents}>
             <div className={home.categories}>
               <Categories />
@@ -21,6 +22,7 @@ export default function Home() {
             </div>
             <div className={home.basket}>
               <Basket />
+              <PastOrders />
             </div>
           </div>
         </div>

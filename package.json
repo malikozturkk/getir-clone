@@ -14,7 +14,9 @@
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.56.1"
+    "react-slick": "^0.29.0",
+    "sass": "^1.56.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1"
