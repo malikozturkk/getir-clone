@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "../styles/layout/Header.module.scss"
 import Link from 'next/link'
 import Logo from "./assets/svg/header/logo.svg"
@@ -7,6 +7,13 @@ import Home from "./assets/svg/header/home.svg"
 import ArrowRight from "./assets/svg/header/arrowRight.svg"
 
 function Header() {
+    const [address, setAddress] = useState(false)
+    if (address) {
+        console.log('açık')
+    }
+    else {
+        console.log('kapalı')
+    }
   return (
     <header className={styles.header}>
         <div className={styles.container}>
@@ -42,7 +49,7 @@ function Header() {
                                 </div>
                             </div>
                             <article className={styles.timeMain}>
-                                <div className={styles.home}>
+                                <div className={styles.home} onClick={() => setAddress(!address)}>
                                     <button className={styles.homeButton}>
                                         <figure className={styles.homeFigure}>
                                             <Home className={styles.homeIcon} />

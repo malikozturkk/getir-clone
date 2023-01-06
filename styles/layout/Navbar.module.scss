@@ -14,6 +14,7 @@
         margin-left: auto;
         margin-right: auto;
         height: 100%;
+        position: relative;
         .navLeft {
             display: inline-flex;
             align-items: center;
@@ -173,6 +174,8 @@
                 font-size: 12px;
                 line-height: 16px;
                 font-weight: 600;
+                background-color: rgb(76, 51, 152);
+                border: none;
                 cursor: pointer;
                 .profile {
                     padding: 6px 12px;
@@ -218,6 +221,220 @@
                                 width: 9px;
                                 height: 9px;
                             }
+                        }
+                    }
+                }
+            }
+            .loginItem, .signUpItem {
+                margin-right: 4px;
+                user-select: none;
+                display: inline-flex;
+                background-color: transparent;
+                border: 0px;
+                padding: 0px;
+                border-radius: 0px;
+                overflow: initial;
+                .loginButton, .signUpButton {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                    padding: 10px 16px;
+                    border-style: initial;
+                    cursor: pointer;
+                    background-color: inherit;
+                    color: inherit;
+                    border-color: inherit;
+                    .loginIcon, .signUpIcon {
+                        margin-right: 4px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-width: 24px;
+                        min-height: 24px;
+                        .icon {
+                            margin-right: 8px;
+                            fill: currentcolor;
+                            width: 16px;
+                            height: 16px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .unOrderedLists {
+        padding-top: 0px;
+        right: 0;
+        z-index: 21;
+        width: 260px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgb(93 62 188 / 10%) 0px 16px 46px;
+        border-radius: 0px 0px 4px 4px;
+        padding-bottom: 8px;
+        white-space: nowrap;
+        color: rgb(25, 25, 25);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+        position: absolute;
+        top: 40px;
+        margin: 0;
+        .unOrderedList {
+            position: relative;
+            box-shadow: none;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            white-space: normal;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0px 0px 4px 4px;
+            color: rgb(25, 25, 25);
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+            .accountList {
+                width: auto;
+                .accountDiv {
+                    .accountLink {
+                        padding: 0px;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #191919;
+                        display: block;
+                        text-decoration: none;
+                        position: relative;
+                        outline: 0px;
+                        .accountContainer {
+                            display: flex;
+                            background-color: #f3f0fe;
+                            padding: 16px;
+                            margin-bottom: 8px;
+                            .accountIcons {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 8px;
+                                flex-shrink: 0;
+                                background: rgb(255, 255, 255);
+                                border: 1px solid rgb(245, 245, 245);
+                                color: rgb(219, 219, 255);
+                                overflow: hidden;
+                                display: inline-flex;
+                                .accountIcon {
+                                    width: 100%;
+                                    height: 100%;
+                                    min-width: auto;
+                                    min-height: auto;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    .icon {
+                                        width: 26px;
+                                        height: 26px;
+                                        min-width: auto;
+                                        min-height: auto;
+                                        fill: currentcolor;
+                                    }
+                                }
+                            }
+                            .accountMain {
+                                display: flex;
+                                flex-direction: column;
+                                margin-left: 12px;
+                                .accountName {
+                                    line-height: 20px;
+                                    color: #191919;
+                                }
+                                .accountPhone {
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    color: #697488;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .otherList {
+                &:hover {
+                    color: #5d3ebc;
+                    background-color: #f3f0fe;
+                }
+                width: auto;
+                .otherDiv {
+                    .otherLink {
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #191919;
+                        display: block;
+                        text-decoration: none;
+                        padding: 8px 16px;
+                        position: relative;
+                        outline: 0px;
+                        &:hover {
+                            color: #5d3ebc;
+                        }
+                    }
+                }
+            }
+            .lineList {
+                width: auto;
+                .lineDiv {
+                    margin-top: 8px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    .lineSpan {
+                        border-color: #f3f0fe;
+                        display: flex;
+                        width: 100%;
+                        border: 1px solid #f2f0fe;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .logOutList {
+                margin-top: 8px;
+                width: auto;        
+                &:hover {
+                    color: #5d3ebc;
+                    background-color: #f3f0fe;
+                }
+                .logOutDiv {
+                    width: 100%;
+                    user-select: none;
+                    display: inline-flex;
+                    color: rgb(93, 62, 188);
+                    background-color: transparent;
+                    border: 0px;
+                    padding: 0px;
+                    border-radius: 0px;
+                    overflow: initial;
+                    .logOutButton {
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #191919;
+                        padding: 8px 56px 8px 16px;
+                        justify-content: flex-start;
+                        width: 100%;
+                        height: 100%;
+                        display: inline-flex;
+                        align-items: center;
+                        outline: 0px;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-image: initial;
+                        cursor: pointer;
+                        background-color: inherit;
+                        border-color: inherit;
+                        &:hover {
+                            color: #5d3ebc;
                         }
                     }
                 }
