@@ -1,0 +1,112 @@
+
+.dropdownContainer {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    .selectedFlag {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 99;
+    }
+    .dropdownMain {
+        font-family: Roboto,sans-serif;
+        font-size: 15px;
+        position: relative;
+        width: 100%;
+        .flagDropdown {
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+            width: 109px;
+            height: 56px;
+            border: 0px;
+            background: #fff;
+            border-radius: 3px 0 0 0;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            padding: 0;
+            .open {
+                border-color: rgb(93, 62, 188)!important;
+            }
+            .selectFlag {
+                padding-left: 14px;
+                padding-right: 14px;
+                border: 2px solid rgb(223, 222, 226);
+                border-radius: 4px;
+                transition: border-color 0.4s ease 0s;
+                outline: none;
+                position: relative;
+                height: 56px;
+                padding: 0 0 0 8px;
+                .flag {
+                    .open {
+                        transform: translate(0px, -50%) rotate(180deg)!important;
+                    }
+                    .icon {
+                        top: 50%;
+                        right: 10px;
+                        margin: 0px;
+                        width: 10px;
+                        height: 10px;
+                        border: 0px;
+                        transform: translate(0px, -50%);
+                        transition: transform 0.4s ease 0s;
+                        position: absolute;
+                    }
+                }
+            }
+            .dropdown {
+                left: 0px;
+                margin: 8px 0px 0px -1px;
+                top: 100%;
+                width: 100%;
+                background: rgb(255, 255, 255);
+                box-shadow: rgb(93 62 188 / 20%) 0px 4px 24px;
+                border-radius: 2px;
+                outline: none;
+                z-index: 1;
+                list-style: none;
+                position: absolute;
+                padding: 0;
+                max-height: 200px;
+                overflow-y: scroll;
+                .dropdownList {
+                    padding: 8px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #f1f1f1;
+                    }
+                    .phoneCode {
+                        margin-right: 7px;
+                        margin-top: 2px;
+                        display: inline-block;
+                        width: 16px;
+                        height: 11px;
+                    }
+                    .countryName {
+                        display: none;
+                        margin-right: 6px;
+                    }
+                    .dialCode {
+                        color: #6b6b6b;
+                    }
+                }
+            }
+        }
+    }
+    .selectedCode {
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        line-height: 24px;
+        color: rgb(62, 62, 62);
+        pointer-events: none;
+        font-size: 14px;
+    }
+}

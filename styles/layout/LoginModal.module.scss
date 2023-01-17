@@ -81,67 +81,86 @@
                         display: flex;
                         flex-direction: column;
                         width: 100%;
-                        .inputsMain {
+                        .inputsMain, .passwordMain {
                             margin-bottom: 0px;
                             margin-top: 0px;
                             display: flex;
                             align-items: flex-start;
-                            .phoneInputContainer {
-                                margin-left: 10px;
-                                margin-top: 8px;
-                                margin-bottom: 8px;
-                                display: flex;
-                                flex-direction: column;
+                            .phoneInputContainer, .passwordInputContainer {
                                 width: 100%;
-                                .phoneInputMain {
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    position: relative;
-                                    border: 2px solid rgb(223, 222, 226);
-                                    border-radius: 4px;
+                                height: 56px;
+                                margin: 8px 0 8px 10px;
+                                border: 2px solid rgb(223, 222, 226);
+                                border-radius: 4px;
+                                position: relative;
+                                &:hover {
+                                    border-color: rgb(120, 73, 247);
+                                }
+                                .phone, .password {
                                     width: 100%;
-                                    background-color: rgb(255, 255, 255);
-                                    transition: all 0.2s ease 0s;
-                                    height: 56px;
-                                    .phoneInput {
-                                        display: flex;
-                                        flex-direction: column-reverse;
-                                        justify-content: center;
-                                        width: 100%;
-                                        height: 100%;
-                                        position: relative;
-                                        .phone {
-                                            width: 100%;
-                                            padding-top: 10px;
-                                            position: relative;
-                                            color: rgb(25, 25, 25);
-                                            line-height: 24px;
-                                            caret-color: rgb(120, 73, 247);
-                                            height: 100%;
-                                            padding-left: 14px;
-                                            padding-right: 14px;
-                                            border-radius: 4px;
-                                        }
-                                        .label {
-                                            display: inline-block;
-                                            visibility: visible;
-                                            user-select: none;
-                                            position: absolute;
-                                            color: rgb(131, 130, 135);
-                                            font-size: 14px;
-                                            line-height: 16px;
-                                            pointer-events: none;
-                                            transition: top 0.2s ease 0s, transform 0.2s ease 0s, font-size 0.2s ease 0s;
-                                            top: 50%;
-                                            left: 14px;
-                                            transform: translateY(-50%);
-                                        }
+                                    height: 100%;
+                                    padding-left: 14px;
+                                    color: rgb(25, 25, 25);
+                                    box-sizing: border-box;
+                                    padding-top: 10px;
+                                    font-size: 14px;
+                                }
+                                .label, .focusLabel {
+                                    display: inline-block;
+                                    visibility: visible;
+                                    user-select: none;
+                                    position: absolute;
+                                    color: rgb(131, 130, 135);
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    pointer-events: none;
+                                    transition: top 0.2s ease 0s, transform 0.2s ease 0s, font-size 0.2s ease 0s;
+                                    top: 50%;
+                                    left: 14px;
+                                    transform: translateY(-50%);
+                                }
+                                .focusLabel {
+                                    font-size: 12px;
+                                    top: 4px;
+                                    color: rgb(93, 62, 188);
+                                    transform: translateY(0px);
+                                }
+                                .errorMain {
+                                    position: absolute;
+                                    right: 14px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    .errorIcon {
+                                        width: 22px;
                                     }
+                                }
+                                .errorMessage {
+                                    display: inline-block;
+                                    color: rgb(219, 71, 30);
+                                    margin-top: 8px;
+                                    font-size: 12px;
+                                    line-height: 20px;
+                                }
+                            }
+                            .passwordInputContainer {
+                                margin-left: 0;
+                            }
+                            .focusContainer {
+                                border-color: rgb(120, 73, 247);
+                            }
+                            .errorInput {
+                                border: 2px solid rgb(219, 71, 30);
+                                &:hover {
+                                    border: 2px solid rgb(219, 71, 30);
                                 }
                             }
                         }
+                        .errorInputs {
+                            margin-bottom: 25px;
+                        }
+                    }
+                    .errorInputs {
+                        margin-bottom: 25px;
                     }
                     .loginButtonMain {
                         margin-top: 0px;
@@ -164,6 +183,7 @@
                                 height: 48px;
                                 font-size: 14px;
                                 white-space: nowrap;
+                                font-weight: 600;
                             }
                             &:hover {
                                 background-color: rgb(120, 73, 247);

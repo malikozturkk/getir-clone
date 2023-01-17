@@ -19,7 +19,7 @@ function Navbar() {
     const [showProfile, setShowProfile] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
     const [showSignUp, setShowSignUp] = useState(false)
-    const user = true
+    const user = false
     let arrowStyle = {
         transform: 'rotate(0deg)'
     }
