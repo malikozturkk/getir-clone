@@ -1,0 +1,110 @@
+{
+    "LanguageModal": {
+        "title": "Change Language",
+        "button": "Update"
+    },
+    "Navbar": {
+        "login": "Login",
+        "signup": "Sign Up",
+        "campaign": "Promotions",
+        "profile": "Profile"
+    },
+    "LoginModal": {
+        "title": "Login or register",
+        "inputText": "Mobile Phone",
+        "alert": "Enter phone number",
+        "buttonText": "Continue with phone number",
+        "lightningText": "For the GDPR document regarding your personal information:",
+        "lightningClick": "Click",
+        "signedText": "Still haven't signed up?",
+        "signedLink": "Sign Up"
+    },
+    "Basket": {
+        "title": "Basket",
+        "info": "Your basket is empty",
+        "text": "Add product(s) to your basket to place an order."
+    },
+    "Footer": {
+        "download": "Download Getir!",
+        "information": "Information Society Services",
+        "discover": {
+            "title": "Discover Getir",
+            "about": "About us",
+            "careers": "Careers",
+            "technologyCareers": "Technology Careers",
+            "contact": "Contact us",
+            "socialProject": "Social Responsibility Projects"
+        },
+        "help": {
+            "title": "Need help?",
+            "faq": "FAQ",
+            "personalData": "Protection of Personal Data",
+            "privacy": "Privacy Policy",
+            "termsConditions": "Terms & Conditions",
+            "cookie": "Cookie Policy"
+        },
+        "partner": {
+            "title": "Become Our Business Partner",
+            "franchisee": "Become a Franchisee",
+            "warehouse": "Rent Your Warehouse",
+            "food": "Become a GetirFood Restaurant",
+            "locals": "Become a GetirLocals Business",
+            "chainRestaurants": "Chain Restaurants"
+        }
+    },
+    "HeaderInfo": {
+        "minBasket": "Minimum",
+        "delivery": "Delivery"
+    },
+    "SearchForm": {
+        "inputPlaceholder": "Search Product",
+        "home": "Home",
+        "work": "Work",
+        "other": "Other",
+        "eta": "ETA",
+        "minute": "min"
+    },
+    "PreviousOrders": {
+        "title": "Previous Orders",
+        "home": "Home",
+        "work": "Work",
+        "other": "Other",
+        "month": "Nov",
+        "button": "Show all"
+    },
+    "Profile": {
+        "address": "My Addresses",
+        "favorite": "Favorite Products",
+        "previous": "Previous Orders",
+        "paymentMethods": "My Payment Methods",
+        "invoice": "Invoice Information",
+        "communication": "Communication Preferences",
+        "logout": "Logout"
+    },
+    "SignUpModal": {
+        "title": "Sign Up",
+        "errors": {
+            "phone": "Enter phone number",
+            "name": "Enter name and surname.",
+            "email": "Enter e-mail."
+        },
+        "labels": {
+            "phone": "Mobile Phone",
+            "name": "Name Surname",
+            "email": "E-mail"
+        },
+        "news": "I want to be informed of special promotions and news regarding Getir.",
+        "lightning": {
+            "1": "Please click ",
+            "2": "here",
+            "3": "  to review our Privacy Notice regarding your personal data. By becoming a member, you accept our ",
+            "4": "Terms of Conditions",
+            "5": "."
+        },
+        "button": "Sign Up",
+        "login": {
+            "info": "If you're a member of Getir",
+            "text": "Login"
+        }
+    }
+}

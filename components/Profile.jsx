@@ -2,7 +2,19 @@ import React from 'react'
 import styles from "../styles/layout/Navbar.module.scss"
 import Link from 'next/link'
 import Account from "./assets/svg/navbar/account.svg"
-function Profile({ shadowClick }) {
+import { useDispatch } from "react-redux"
+import { logout, actionProfileModal } from '../store/auth'
+import { useTranslation } from "react-i18next"
+function Profile() {
+    const userName = localStorage.getItem("userName")
+    const phone = localStorage.getItem("phone")
+    const dispatch = useDispatch()
+    const { t } = useTranslation()
+
+    const logOut = () => {
+        dispatch(logout())
+        dispatch(actionProfileModal(false))
+    }
   return (
     <>
         <ul className={styles.unOrderedLists}>
@@ -17,8 +29,8 @@ function Profile({ shadowClick }) {
                                     </div>
                                 </div>
                                 <div className={styles.accountMain}>
-                                    <span className={styles.accountName}>Malik Öztürk</span>
-                                    <span className={styles.accountPhone}>+905319476796</span>
+                                    <span className={styles.accountName}>{userName}</span>
+                                    <span className={styles.accountPhone}>{phone}</span>
                                 </div>
                             </div>
                         </Link>
@@ -26,32 +38,32 @@ function Profile({ shadowClick }) {
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/adreslerim/" className={styles.otherLink}>Adreslerim</Link>
+                        <Link href="/hesap/adreslerim/" className={styles.otherLink}>{t('Profile.address')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/favori-urunlerim/" className={styles.otherLink}>Favori Ürünlerim</Link>
+                        <Link href="/hesap/favori-urunlerim/" className={styles.otherLink}>{t('Profile.favorite')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/gecmis-siparislerim/" className={styles.otherLink}>Geçmiş Siparişlerim</Link>
+                        <Link href="/hesap/gecmis-siparislerim/" className={styles.otherLink}>{t('Profile.previous')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/odeme-yontemlerim/" className={styles.otherLink}>Ödeme Yöntemlerim</Link>
+                        <Link href="/hesap/odeme-yontemlerim/" className={styles.otherLink}>{t('Profile.paymentMethods')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/fatura/" className={styles.otherLink}>Fatura Bilgileri</Link>
+                        <Link href="/hesap/fatura/" className={styles.otherLink}>{t('Profile.invoice')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/iletisim-tercihleri/" className={styles.otherLink}>İletişim Tercihlerim</Link>
+                        <Link href="/hesap/iletisim-tercihleri/" className={styles.otherLink}>{t('Profile.communication')}</Link>
                     </div>
                 </li>
                 <li className={styles.lineList}>
@@ -61,12 +73,12 @@ function Profile({ shadowClick }) {
                 </li>
                 <li className={styles.logOutList}>
                     <div className={styles.logOutDiv}>
-                        <button className={styles.logOutButton}>Çıkış yap</button>
+                        <button className={styles.logOutButton} onClick={logOut}>{t('Profile.logout')}</button>
                     </div>
                 </li>
             </ul>
         </ul>
-        <div className='shadow-bg' onClick={shadowClick}></div>
+        <div className='shadow-bg' onClick={() => dispatch(actionProfileModal(false))}></div>
     </>
   )
 }

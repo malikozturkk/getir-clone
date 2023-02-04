@@ -8,14 +8,22 @@ import Twitter from "./assets/svg/footer/twitter.svg"
 import AppGallery from "./assets/svg/footer/appgallery.svg"
 import AppleStore from "./assets/svg/footer/applestore.svg"
 import GooglePlay from "./assets/svg/footer/googleplay.svg"
+import { actionLanguageModal } from '../store/language'
+import { useDispatch, useSelector } from "react-redux"
+import { useTranslation } from "react-i18next"
 
 function Footer() {
+    const dispatch = useDispatch()
+    const { selectLang } = useSelector(state => state.language)
+    const { t } = useTranslation()
+    const year = new Date().getFullYear()
+
   return (
     <footer className={footer.footer}>
         <nav className={footer.nav}>
             <div className={footer.top}>
                 <div className={footer.market}>
-                    <div className={footer.title}>Getir'i indirin!</div>
+                    <div className={footer.title}>{t('Footer.download')}</div>
                     <ol className={footer.lists}>
                         <li className={footer.listItem}>
                             <a className={footer.socialLink} href='https://apps.apple.com/app/id995280265' target='_blank'>
@@ -41,91 +49,91 @@ function Footer() {
                     </ol>
                 </div>
                 <div className={footer.footerMenus}>
-                    <div className={footer.title}>Getir'i keşfedin</div>
+                    <div className={footer.title}>{t('Footer.discover.title')}</div>
                     <ol className={footer.lists}>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/hakkimizda/' target='_blank'>
-                                <span className={footer.text}>Hakkımızda</span>
+                                <span className={footer.text}>{t('Footer.discover.about')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://career.getir.com/' target='_blank'>
-                                <span className={footer.text}>Kariyer</span>
+                                <span className={footer.text}>{t('Footer.discover.careers')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://career.getir.com/' target='_blank'>
-                                <span className={footer.text}>Teknoloji Kariyerleri</span>
+                                <span className={footer.text}>{t('Footer.discover.technologyCareers')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/hakkimizda/iletisim/' target='_blank'>
-                                <span className={footer.text}>İletişim</span>
+                                <span className={footer.text}>{t('Footer.discover.contact')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/sosyal-sorumluluk-projeleri/' target='_blank'>
-                                <span className={footer.text}>Sosyal Sorumluluk Projeleri</span>
+                                <span className={footer.text}>{t('Footer.discover.socialProject')}</span>
                             </a>
                         </li>
                     </ol>
                 </div>
                 <div className={footer.footerMenus}>
-                    <div className={footer.title}>Yardıma mı ihtiyacınız var?</div>
+                    <div className={footer.title}>{t('Footer.help.title')}</div>
                     <ol className={footer.lists}>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yardim/sss/' target='_blank'>
-                                <span className={footer.text}>Sıkça Sorulan Sorular</span>
+                                <span className={footer.text}>{t('Footer.help.faq')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yardim/kvkk/' target='_blank'>
-                                <span className={footer.text}>Kişisel Verilerin Korunması</span>
+                                <span className={footer.text}>{t('Footer.help.personalData')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yardim/gizlilik-politikasi/' target='_blank'>
-                                <span className={footer.text}>Gizlilik Politikası</span>
+                                <span className={footer.text}>{t('Footer.help.privacy')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yardim/kullanim-kosullari/' target='_blank'>
-                                <span className={footer.text}>Kullanım Koşulları</span>
+                                <span className={footer.text}>{t('Footer.help.termsConditions')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yardim/cerez-politikasi/' target='_blank'>
-                                <span className={footer.text}>Çerez Politikası</span>
+                                <span className={footer.text}>{t('Footer.help.cookie')}</span>
                             </a>
                         </li>
                     </ol>
                 </div>
                 <div className={footer.footerMenus}>
-                    <div className={footer.title}>İş Ortağımız Olun</div>
+                    <div className={footer.title}>{t('Footer.partner.title')}</div>
                     <ol className={footer.lists}>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://bayi-basvuru.getir.com/' target='_blank'>
-                                <span className={footer.text}>Bayimiz Olun</span>
+                                <span className={footer.text}>{t('Footer.partner.franchisee')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://depodukkan.getir.com/' target='_blank'>
-                                <span className={footer.text}>Deponuzu Kiralayın</span>
+                                <span className={footer.text}>{t('Footer.partner.warehouse')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://restoran.getiryemek.com/login' target='_blank'>
-                                <span className={footer.text}>GetirYemek Restoranı Olun</span>
+                                <span className={footer.text}>{t('Footer.partner.food')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://panel.getircarsi.com/form/pre-application' target='_blank'>
-                                <span className={footer.text}>GetirÇarşı İşletmesi Olun</span>
+                                <span className={footer.text}>{t('Footer.partner.locals')}</span>
                             </a>
                         </li>
                         <li className={footer.listItem}>
                             <a className={footer.link} href='https://getir.com/yemek/markalar/' target='_blank'>
-                                <span className={footer.text}>Zincir Restoranlar</span>
+                                <span className={footer.text}>{t('Footer.partner.chainRestaurants')}</span>
                             </a>
                         </li>
                     </ol>
@@ -141,13 +149,13 @@ function Footer() {
         </nav>
         <article className={footer.article}>
             <div className={footer.bottom}>
-                <span className={footer.copyright}>© 2022 Getir</span>
+                <span className={footer.copyright}>© {year} Getir</span>
                 <div className={footer.listDiv}>
                     <ol className={footer.list}>
                         <li className={footer.listItem}>
                             <div className={footer.listItemDiv}>
                                 <Link href='/' className={footer.listLink}>
-                                    <span className={footer.info}>Bilgi Toplumu Hizmetleri</span>
+                                    <span className={footer.info}>{t('Footer.information')}</span>
                                 </Link>
                             </div>
                         </li>
@@ -182,13 +190,13 @@ function Footer() {
                                 </a>
                             </div>
                         </li>
-                        <li className={footer.listItem4}>
+                        <li className={footer.listItem4} onClick={() => dispatch(actionLanguageModal(true))}>
                             <div className={footer.listItemLanguage}>
                                 <button className={footer.languageButton}>
                                     <div className={footer.language}>
                                         <Language className={footer.languageIcon} />
                                     </div>
-                                    <span className={footer.languageText}>Türkçe (TR)</span>
+                                    <span className={footer.languageText}>{selectLang}</span>
                                 </button>
                             </div>
                         </li>

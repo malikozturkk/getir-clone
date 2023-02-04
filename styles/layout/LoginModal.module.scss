@@ -81,12 +81,12 @@
                         display: flex;
                         flex-direction: column;
                         width: 100%;
-                        .inputsMain, .passwordMain {
+                        .inputsMain {
                             margin-bottom: 0px;
                             margin-top: 0px;
                             display: flex;
                             align-items: flex-start;
-                            .phoneInputContainer, .passwordInputContainer {
+                            .phoneInputContainer {
                                 width: 100%;
                                 height: 56px;
                                 margin: 8px 0 8px 10px;
@@ -96,7 +96,7 @@
                                 &:hover {
                                     border-color: rgb(120, 73, 247);
                                 }
-                                .phone, .password {
+                                .phone {
                                     width: 100%;
                                     height: 100%;
                                     padding-left: 14px;
@@ -134,16 +134,16 @@
                                         width: 22px;
                                     }
                                 }
-                                .errorMessage {
+                                .errorMessage, .notUser {
                                     display: inline-block;
                                     color: rgb(219, 71, 30);
                                     margin-top: 8px;
                                     font-size: 12px;
                                     line-height: 20px;
                                 }
-                            }
-                            .passwordInputContainer {
-                                margin-left: 0;
+                                .notUser {
+                                    display: block;
+                                }
                             }
                             .focusContainer {
                                 border-color: rgb(120, 73, 247);

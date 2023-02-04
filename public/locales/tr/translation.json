@@ -1,0 +1,110 @@
+{
+    "LanguageModal": {
+        "title": "Dil Değiştir",
+        "button": "Güncelle"
+    },
+    "Navbar": {
+        "login": "Giriş Yap",
+        "signup": "Kayıt Ol",
+        "campaign": "Kampanyalar",
+        "profile": "Profil"
+    },
+    "LoginModal": {
+        "title": "Giriş yap veya kayıt ol",
+        "inputText": "Telefon Numarası",
+        "alert": "Lütfen telefon numaranızı giriniz.",
+        "buttonText": "Telefon numarası ile devam et",
+        "lightningText": "Kişisel verilerinize dair Aydınlatma Metni için",
+        "lightningClick": "tıklayınız.",
+        "signedText": "Hala kayıt olmadınız mı?",
+        "signedLink": "Kayıt Ol"
+    },
+    "Basket": {
+        "title": "Sepetim",
+        "info": "Sepetiniz şu an boş",
+        "text": "Sipariş vermek için sepetinize ürün ekleyin"
+    },
+    "Footer": {
+        "download": "Getir'i indirin!",
+        "information": "Bilgi Toplumu Hizmetleri",
+        "discover": {
+            "title": "Getir'i keşfedin",
+            "about": "Hakkımızda",
+            "careers": "Kariyer",
+            "technologyCareers": "Teknoloji Kariyerleri",
+            "contact": "İletişim",
+            "socialProject": "Sosyal Sorumluluk Projeleri"
+        },
+        "help": {
+            "title": "Yardıma mı ihtiyacınız var?",
+            "faq": "Sıkça Sorulan Sorular",
+            "personalData": "Kişisel Verilerin Korunması",
+            "privacy": "Gizlilik Politikası",
+            "termsConditions": "Kullanım Koşulları",
+            "cookie": "Çerez Politikası"
+        },
+        "partner": {
+            "title": "İş Ortağımız Olun",
+            "franchisee": "Bayimiz Olun",
+            "warehouse": "Deponuzu Kiralayın",
+            "food": "GetirYemek Restoranı Olun",
+            "locals": "GetirÇarşı İşletmesi Olun",
+            "chainRestaurants": "Zincir Restoranlar"
+        }
+    },
+    "HeaderInfo": {
+        "minBasket": "Minimum",
+        "delivery": "Getirmesi"
+    },
+    "SearchForm": {
+        "inputPlaceholder": "Ürün ara",
+        "home": "Ev",
+        "work": "İş",
+        "other": "Diğer",
+        "eta": "TVS",
+        "minute": "dk"
+    },
+    "PreviousOrders": {
+        "title": "Geçmiş Siparişlerim",
+        "home": "Ev",
+        "work": "İş",
+        "other": "Diğer",
+        "month": "Kas",
+        "button": "Tümünü Gör"
+    },
+    "Profile": {
+        "address": "Adreslerim",
+        "favorite": "Favori Ürünlerim",
+        "previous": "Geçmiş Siparişlerim",
+        "paymentMethods": "Ödeme Yöntemlerim",
+        "invoice": "Fatura Bilgileri",
+        "communication": "İletişim Tercihlerim",
+        "logout": "Çıkış yap"
+    },
+    "SignUpModal": {
+        "title": "Kayıt Ol",
+        "errors": {
+            "phone": "Lütfen telefon numaranızı giriniz.",
+            "name": "Lütfen ad ve soyadınızı giriniz.",
+            "email": "Lütfen email adresinizi giriniz."
+        },
+        "labels": {
+            "phone": "Telefon Numarası",
+            "name": "Ad Soyad",
+            "email": "E-Posta"
+        },
+        "news": "Getir’in bana özel kampanya, tanıtım ve fırsatlarından haberdar olmak istiyorum.",
+        "lightning": {
+            "1": "Kişisel verilerinize dair Aydınlatma Metni için ",
+            "2": "tıklayınız",
+            "3": " .Üye olmakla, ",
+            "4": "Kullanım Koşulları",
+            "5": " hükümlerini kabul etmektesiniz."
+        },
+        "button": "Kayıt Ol",
+        "login": {
+            "info": "Getir'e üyeyseniz",
+            "text": "Giriş yap"
+        }
+    }
+}

@@ -18,16 +18,18 @@ import Slider11 from "./assets/jpeg/slider/slider11.png"
 import Slider12 from "./assets/jpeg/slider/slider12.jpeg"
 import Slider13 from "./assets/jpeg/slider/slider13.jpeg"
 import Slider14 from "./assets/jpeg/slider/slider14.jpeg"
-import Next from "./assets/jpeg/slider/next.svg"
-import Previous from "./assets/jpeg/slider/previous.svg"
+import { useSelector } from "react-redux"
 
 function Sliders() {
+  const { selectLang } = useSelector(state => state.language)
   let settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false
   }
   let images = [
     Slider1,

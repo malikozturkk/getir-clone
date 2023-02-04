@@ -6,6 +6,9 @@ import Getir from "./assets/svg/navbar/getir.svg"
 import GetirYemek from "./assets/svg/navbar/getirYemek.svg"
 import GetirBuyuk from "./assets/svg/navbar/getirBuyuk.svg"
 import GetirSu from "./assets/svg/navbar/getirSu.svg"
+import GetirFood from "./assets/svg/navbar/getirFood.svg"
+import GetirMore from "./assets/svg/navbar/getirMore.svg"
+import GetirWater from "./assets/svg/navbar/getirWater.svg"
 import Language from "./assets/svg/navbar/language.svg"
 import Campaigns from "./assets/svg/navbar/campaigns.svg"
 import ArrowDown from "./assets/svg/navbar/arrowDown.svg"
@@ -14,23 +17,25 @@ import Login from "./assets/svg/navbar/login.svg"
 import SignUp from "./assets/svg/navbar/signUp.svg"
 import LoginModal from "./LoginModal"
 import SignUpModal from "./SignUpModal"
+import LanguageModal from './LanguageModal'
+import { useSelector, useDispatch } from "react-redux"
+import { actionSignupModal, actionLoginModal, actionProfileModal } from '../store/auth'
+import { actionLanguageModal } from "../store/language"
+import { useTranslation } from "react-i18next"
 
 function Navbar() {
-    const [showProfile, setShowProfile] = useState(false)
-    const [showLogin, setShowLogin] = useState(false)
-    const [showSignUp, setShowSignUp] = useState(false)
-    const user = false
+    const dispatch = useDispatch()
+    const { user, signupModal, loginModal, profileModal } = useSelector(state => state.auth)
+    const { languageModal, selectLang, selectedLanguage } = useSelector(state => state.language)
+    const language = selectedLanguage === 'do' ? true : false
+    const { t } = useTranslation()
     let arrowStyle = {
         transform: 'rotate(0deg)'
     }
-    if (showProfile) {
+    if (profileModal) {
         arrowStyle = {
             transform: 'rotate(-180deg)'
         }
-    }
-    function signUpClick () {
-        setShowSignUp(!showSignUp)
-        setShowLogin(!showLogin)
     }
   return (
     <>
@@ -50,7 +55,12 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getiryemek' className={styles.itemUrl}>
                                 <figure className={styles.figure2}>
-                                    <GetirYemek className={styles.logo} viewBox="0 0 131 24" />
+                                    {language 
+                                    ?
+                                        <GetirYemek className={styles.logo} viewBox="0 0 131 24" />
+                                    :
+                                        <GetirFood className={styles.logo} viewBox="0 0 106 24" />
+                                    }
                                 </figure>
                             </Link>
                         </div>
@@ -59,7 +69,12 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getirbuyuk' className={styles.itemUrl}>
                                 <figure className={styles.figure3}>
-                                    <GetirBuyuk className={styles.logo} viewBox="0 0 122 24" />
+                                    {language 
+                                    ?
+                                        <GetirBuyuk className={styles.logo} viewBox="0 0 122 24" />
+                                    :
+                                        <GetirMore className={styles.logo} viewBox="0 0 75 16" />
+                                    }
                                 </figure>
                             </Link>
                         </div>
@@ -68,19 +83,24 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getirsu' className={styles.itemUrl}>
                                 <figure className={styles.figure4}>
-                                    <GetirSu className={styles.logo} viewBox="0 0 210 64" />
+                                    {language 
+                                    ?
+                                        <GetirSu className={styles.logo} viewBox="0 0 210 64" />
+                                    :
+                                        <GetirWater className={styles.logo} viewBox="0 0 316 64" />
+                                    }
                                 </figure>
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div className={styles.navRight}>
-                    <div className={styles.firstItem}>
+                    <div className={styles.firstItem} onClick={() => dispatch(actionLanguageModal(true))}>
                         <button className={styles.changeLanguageButton}>
                             <div className={styles.changeLanguageDiv}>
                                 <Language className={styles.changeLanguageIcon} />
                             </div>
-                            <span className={styles.changeLanguageText}>Türkçe (TR)</span>
+                            <span className={styles.changeLanguageText}>{selectLang}</span>
                         </button>
                     </div>
                     {user &&
@@ -90,16 +110,16 @@ function Navbar() {
                                     <div className={styles.campaignsDiv}>
                                         <Campaigns className={styles.campaignsIcon} />
                                     </div>
-                                    Kampanyalar
+                                    {t('Navbar.campaign')}
                                 </Link>
                             </div>
-                            <button className={styles.thirdItem} onClick={() => setShowProfile(!showProfile)}>
+                            <button className={styles.thirdItem} onClick={() => dispatch(actionProfileModal(true))}>
                                 <div className={styles.profile}>
                                     <span className={styles.profileSpan}>
                                         <div className={styles.profileDiv}>
                                             <Profile className={styles.profileIcon} />
                                         </div>
-                                        Profil
+                                        {t('Navbar.profile')}
                                     </span>
                                     <div className={styles.profileDropdown} style={arrowStyle}>
                                         <div className={styles.profileDropdownIcon}>
@@ -113,35 +133,38 @@ function Navbar() {
                     {!user &&
                         <>
                             <div className={styles.loginItem}>
-                                <button type="button" className={styles.loginButton} onClick={() => setShowLogin(!showLogin)}>
+                                <button type="button" className={styles.loginButton} onClick={() => dispatch(actionLoginModal(true))}>
                                     <div className={styles.loginIcon}>
                                         <Login className={styles.icon} />
                                     </div>
-                                    Giriş yap
+                                    {t('Navbar.login')}
                                 </button>
                             </div>
                             <div className={styles.signUpItem}>
-                                <button type="button" className={styles.signUpButton} onClick={() => setShowSignUp(!showSignUp)}>
+                                <button type="button" className={styles.signUpButton} onClick={() => dispatch(actionSignupModal(true))}>
                                     <div className={styles.signUpIcon}>
                                         <SignUp className={styles.icon} />
                                     </div>
-                                    Kayıt Ol
+                                    {t('Navbar.signup')}
                                 </button>
                             </div>
                         </>
                     }
                 </div>
 
-                {showLogin &&
-                    <LoginModal shadowClick={() => setShowLogin(!showLogin)} signUpClick={signUpClick} />
+                {loginModal &&
+                    <LoginModal />
                 }
 
-                {showSignUp &&
-                    <SignUpModal shadowClick={() => setShowSignUp(!showSignUp)} signUpClick={signUpClick} />
+                {signupModal &&
+                    <SignUpModal />
                 }
 
-                {showProfile && 
-                    <ProfileComponent shadowClick={() => setShowProfile(!showProfile)} />
+                {profileModal && 
+                    <ProfileComponent />
+                }
+                {languageModal &&
+                    <LanguageModal />
                 }
             </div>
         </nav>

@@ -30,37 +30,6 @@ body {
   a {
     text-decoration: none;
   }
-  .slick-slider {
-    .slick-prev {
-      font-weight: bold;
-      left: -40px;
-      &::before {
-          color: #5d3ebc;
-          content: '<'
-      }
-    }
-    .slick-next {
-      font-weight: bold;
-      &::before {
-          color: #5d3ebc;
-          content: '>'
-      }
-    }
-    .slick-list {
-      .slick-slide {
-        border: none;
-        &:focus {
-          border: none;
-        }
-        &:active {
-          border: none;
-        }
-      }
-    }
-}
-.slider {
-    cursor: pointer;
-}
 button {
   width: 100%;
   height: 100%;

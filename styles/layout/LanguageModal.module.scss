@@ -1,0 +1,239 @@
+.modalContainer {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 50%;
+    .modalMain {
+        overflow: visible;
+        position: fixed;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        background-color: white;
+        border-radius: 8px;
+        z-index: 1000;
+        outline: 0px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgb(0 0 0 / 5%) 0px 4px 24px;
+        width: 446px;
+        top: 50%;
+        .modalClose {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 32px;
+            right: 32px;
+            background: rgb(243, 243, 244);
+            border-radius: 8px;
+            z-index: 1;
+            overflow: hidden;
+            user-select: none;
+            color: rgb(93, 62, 188);
+            border: 0px;
+            padding: 0px;
+            .modalCloseButton {
+                padding: 0px;
+                .modalCloseIcon {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 24px;
+                    min-height: 24px;
+                    .icon {
+                        fill: currentcolor;
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+        .modalContent {
+            .modaltitleDiv {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 16px;
+                line-height: 24px;
+                min-width: 100%;
+                padding-top: 36px;
+                justify-content: center;
+                .title {
+                    color: rgb(93, 62, 188);
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+            }
+            .main {
+                padding-top: 32px;
+                padding-bottom: 32px;
+                padding: 36px 32px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .languageForm {
+                    border-radius: 8px;
+                    border: 1px solid #f3f0fe;
+                    height: initial;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .radioLabel {
+                        margin-right: 0px;
+                        padding: 10px 16px;
+                        display: inline-flex;
+                        align-items: center;
+                        vertical-align: middle;
+                        user-select: none;
+                        cursor: pointer;
+                        outline: 0px;
+                        .radioInput {
+                            position: relative;
+                            .radio {
+                                position: absolute;
+                                inset: 0px;
+                                z-index: 1;
+                                opacity: 0;
+                                cursor: pointer;
+                            }
+                            .radioSpan {
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                display: block;
+                                width: 14px;
+                                height: 14px;
+                                padding: 2px;
+                                cursor: pointer;
+                                border: 2px solid rgb(223, 222, 226);
+                                border-radius: 100px;
+                                transition: all 0.3s ease 0s;
+                                &::after {
+                                    content: " ";
+                                    position: absolute;
+                                    width: 14px;
+                                    height: 14px;
+                                    background-color: rgb(93, 62, 188);
+                                    border-radius: 100%;
+                                    transform: scale(0);
+                                    opacity: 0;
+                                    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86) 0s;
+                                }
+                                &.checked {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    display: block;
+                                    width: 14px;
+                                    height: 14px;
+                                    padding: 2px;
+                                    cursor: pointer;
+                                    border: 2px solid rgb(93, 62, 188);
+                                    border-radius: 100px;
+                                    transition: all 0.3s ease 0s;
+                                    &::after {
+                                        content: " ";
+                                        position: absolute;
+                                        width: 14px;
+                                        height: 14px;
+                                        background-color: rgb(93, 62, 188);
+                                        border-radius: 100%;
+                                        transform: scale(1);
+                                        opacity: 1;
+                                        transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86) 0s;
+                                    }
+                                }
+                            }
+                        }
+                        .radioList {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex: 1 1 0%;
+                            position: relative;
+                            color: rgb(82, 82, 82);
+                            line-height: 18px;
+                            padding-left: 12px;
+                            .countryName {
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                    .radioLabel:nth-child(even) {
+                        border-top: 1px solid #f3f0fe;
+                    }
+                }
+            }
+            .languageButtonMain {
+                padding: 0 32px 32px 32px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .buttonDiv {
+                    user-select: none;
+                    display: inline-flex;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    border: 2px solid rgb(93, 62, 188);
+                    background-color: rgb(93, 62, 188);
+                    color: rgb(255, 255, 255);
+                    .languageButton {
+                        height: 48px;
+                        font-size: 14px;
+                        white-space: nowrap;
+                        font-weight: 600;
+                        user-select: none;
+                    }
+                    &:hover {
+                        background-color: rgb(120, 73, 247);
+                            border-color: rgb(120, 73, 247);
+                        transition: all 0.2s ease 0s;
+                    }
+                    &.disabled {
+                        border: 2px solid rgb(162, 162, 162);
+                        box-shadow: rgb(105 116 136 / 15%) 0px 2px 6px;
+                        background-color: rgb(162, 162, 162);
+                        cursor: not-allowed;
+                        .languageButton {
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+            .modalBottom {
+                line-height: 24px;
+                color: rgb(105, 116, 136);
+                display: flex;
+                align-items: center;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                background-color: rgb(245, 245, 245);
+                box-shadow: rgb(0 0 0 / 5%) 0px 4px 24px;
+                height: min-content;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+                justify-content: center;
+                .signUp {
+                    margin-left: 0px;
+                    user-select: none;
+                    display: inline-flex;
+                    color: rgb(93, 62, 188);
+                    background-color: transparent;
+                    border: 0px;
+                    padding: 0px;
+                    border-radius: 0px;
+                    overflow: initial;
+                    .signUpButton {
+                        padding: 0 0 0 5px;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

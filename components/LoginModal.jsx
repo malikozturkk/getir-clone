@@ -5,42 +5,40 @@ import styles from "../styles/layout/LoginModal.module.scss"
 import PhoneInput from './PhoneInput'
 import ErrorLogin from "./assets/svg/header/errorLogin.svg"
 import { useState } from 'react'
-import { fetcher } from "../lib/api"
-import { setToken } from "../lib/auth"
+import { login, actionSignupModal, actionLoginModal } from '../store/auth'
+import { useDispatch } from "react-redux"
+import { useTranslation } from "react-i18next"
 
-function LoginModal({ shadowClick, signUpClick }) {
+function LoginModal() {
+    const dispatch = useDispatch()
     const [focus, setFocus] = useState(false)
     const [error, setError] = useState(false)
-    const [data, setData] = useState({
-        identifier: '',
-        password: ''
-    });
-
-    const handleChange = (e) => {
-        setData({ ...data, [e.target.name]: e.target.value });
-    }
+    const [phone, setPhone] = useState('')
+    const [phoneLength, setPhoneLength] = useState(0)
+    const { t } = useTranslation()
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const data = await fetcher(
-            `${process.env.NEXT_PUBLİC_STRAPI_URL}/auth/local`, 
-            {
-                method: "POST",
-                header: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    identifier: data.identifier,
-                    password: data.password
-                }),
-            }
-        );
-        setToken(data);
+        if(!localStorage.getItem("userName")) {
+            dispatch(actionSignupModal(true))
+            dispatch(actionLoginModal(false))
+            return false
+        }
+        else if (phoneLength < 10) {
+            setError(true)
+        }
+        else {
+            e.preventDefault();
+            setPhone('');
+            localStorage.setItem("phone", phone)
+            dispatch(login())
+            dispatch(actionLoginModal(false))
+        }
     }
 
     function inputFocusOut(event) {
         setFocus(false)
         const input = event.target.value
+        setPhoneLength(input.length)
         if (input.length > 0) {
             setFocus(true)
         }
@@ -56,7 +54,7 @@ function LoginModal({ shadowClick, signUpClick }) {
         <div className={styles.modalContainer}>
             <div className={styles.modalMain}>
                 <div className={styles.modalClose}>
-                    <button className={styles.modalCloseButton} onClick={shadowClick}>
+                    <button className={styles.modalCloseButton} onClick={() => dispatch(actionLoginModal(false))}>
                         <div className={styles.modalCloseIcon}>
                             <Close className={styles.icon} />
                         </div>
@@ -64,78 +62,62 @@ function LoginModal({ shadowClick, signUpClick }) {
                 </div>
                 <div className={styles.modalContent}>
                     <div className={styles.modaltitleDiv}>
-                        <h6 className={styles.title}>Giriş yap veya kayıt ol</h6>
+                        <h6 className={styles.title}>{t('LoginModal.title')}</h6>
                     </div>
                     <div className={styles.main}>
-                        <form className={styles.loginForm} onSubmit={handleSubmit}>
+                        <div className={styles.loginForm}>
                             <div className={`${styles.loginInputs} ${error ? styles.errorInputs : ''}`}>
                                 <div className={`${styles.inputsMain} ${error ? styles.errorInputs : ''}`}>
                                     <PhoneInput />
                                     <div className={`${styles.phoneInputContainer} ${focus ? styles.focusContainer : ''} ${error ? styles.errorInput : ''}`}>
-                                        <input onChange={handleChange} onBlur={(event) => inputFocusOut(event)} onClick={() => setFocus(true)} type="tel" className={styles.phone} name="identifier" pattern="[0-9.]+" maxLength="10" minLength="10" required />
+                                        <input onBlur={(event) => inputFocusOut(event)} onClick={() => setFocus(true)}  onChange={(event) => setPhone(event.target.value)} type="tel" className={styles.phone} name="identifier" pattern="[0-9.]+" maxLength="10" minLength="10" required />
                                         {!focus &&
-                                            <label className={styles.label}>Telefon Numarası</label>
+                                            <label className={styles.label}>{t('LoginModal.inputText')}</label>
                                         }
                                         {focus &&
-                                            <label className={styles.focusLabel}>Telefon Numarası</label>
+                                            <label className={styles.focusLabel}>{t('LoginModal.inputText')}</label>
                                         }
                                         {error &&
                                             <>
                                                 <div className={styles.errorMain}>
                                                     <ErrorLogin className={styles.errorIcon} />
                                                 </div>
-                                                <span className={styles.errorMessage}>Lütfen telefon numaranızı giriniz.</span>
+                                                <span className={styles.errorMessage}>{t('LoginModal.alert')}</span>
                                             </>
                                         }
-                                    </div>
-                                </div>
-                                <div className={styles.passwordMain}>
-                                    <div className={`${styles.passwordInputContainer} ${focus ? styles.focusContainer : ''} ${error ? styles.errorInput : ''}`}>
-                                            <input onChange={handleChange} onBlur={(event) => inputFocusOut(event)} onClick={() => setFocus(true)} type="password" className={styles.password} name="password" />
-                                            {!focus &&
-                                                <label className={styles.label}>Şifreniz</label>
-                                            }
-                                            {focus &&
-                                                <label className={styles.focusLabel}>Şifreniz</label>
-                                            }
-                                            {error &&
-                                                <>
-                                                    <div className={styles.errorMain}>
-                                                        <ErrorLogin className={styles.errorIcon} />
-                                                    </div>
-                                                    <span className={styles.errorMessage}>Lütfen şifrenizi giriniz.</span>
-                                                </>
-                                            }
                                     </div>
                                 </div>
                             </div>
                             <div className={styles.loginButtonMain}>
                                 <div className={styles.buttonDiv}>
-                                    <button className={styles.loginButton}>Telefon numarası ile devam et</button>
+                                    <button className={styles.loginButton} onClick={handleSubmit}>{t('LoginModal.buttonText')}</button>
                                 </div>
                                 <div className={styles.lightningMain}>
-                                    Kişisel verilerinize dair Aydınlatma Metni için 
+                                    {t('LoginModal.lightningText')}
                                     <div className={styles.lightningClick}>
                                         <Link href='https://getir.com/yardim/kvkk/' className={styles.lightningLink} target="_blank">
-                                            tıklayınız.
+                                            {t('LoginModal.lightningClick')}
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div className={styles.modalBottom}>
-                        Hala kayıt olmadınız mı?
+                        {t('LoginModal.signedText')}
                         <div className={styles.signUp}>
-                            <button className={styles.signUpButton} onClick={signUpClick}>
-                                Kayıt Ol
+                            <button className={styles.signUpButton} onClick={() => {
+                                dispatch(actionSignupModal(true))
+                                dispatch(actionLoginModal(false))
+                            }}>
+                                {t('LoginModal.signedLink')}
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div className='backdrop' onClick={shadowClick}></div>
+        <div className='backdrop' onClick={() => dispatch(actionLoginModal(false))}></div>
     </>
   )
 }
