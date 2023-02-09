@@ -1,0 +1,193 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .category {
+        margin-bottom: 8px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+            font-size: 14px;
+            color: rgb(25, 25, 25);
+            line-height: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+    .cardWrapper {
+        max-height: calc(100vh - 170px);
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0px;
+        overflow-y: auto;
+        justify-content: space-between;
+        width: 100%;
+        background: rgb(255, 255, 255);
+        box-shadow: rgb(93 62 188 / 4%) 0px 6px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        .collapse {
+            padding: 8px 0px;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            box-shadow: rgb(93 62 188 / 4%) 0px 6px 16px;
+            border-radius: 8px;
+            .panel {
+                &.active {
+                    .panelHeaderWrapper {
+                        .panelHeader {
+                            background-color: #f3f0fe;
+                            .text {
+                                .wrapper {
+                                    .link {
+                                        .arrow {
+                                            .icon {
+                                                color: #5d3ebc;
+                                                transition: transform 0.5s ease 0s;
+                                                transform: rotate(180deg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                .panelHeaderWrapper {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    .panelHeader {
+                        padding: 4px 12px;
+                        cursor: pointer;
+                        user-select: none;
+                        margin-bottom: 0px;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        .text {
+                            flex: 1 1 0%;
+                            display: flex;
+                            font-weight: 600;
+                            font-size: 13px;
+                            line-height: 18px;
+                            color: rgb(93, 62, 188);
+                            .wrapper {
+                                width: 100%;
+                                .link {
+                                    width: 100%;
+                                    text-decoration: none;
+                                    display: flex;
+                                    align-items: center;
+                                    position: relative;
+                                    outline: 0px;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    color: rgb(93, 62, 188);
+                                    .imageWrapper {
+                                        display: inline-flex;
+                                        border: 1px solid rgba(25, 25, 25, 0.1);
+                                        border-radius: 3px;
+                                        overflow: hidden;
+                                        width: 32px;
+                                        height: 32px;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin: 0px;
+                                        .image {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            border-radius: 0px;
+                                            background: transparent;
+                                            animation: 0s ease 0s 1 normal none running none;
+                                            border-style: none;
+                                        }
+                                    }
+                                    .text {
+                                        text-align: left;
+                                        margin-left: 16px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        .name {
+                                            color: #191919;
+                                            line-height: 18px;
+                                        }
+                                    }
+                                    .arrow {
+                                        margin-left: auto;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        min-width: 24px;
+                                        min-height: 24px;
+                                        .icon {
+                                            color: rgb(161, 161, 161);
+                                            transition: transform 0.5s ease 0s;
+                                            fill: currentcolor;
+                                            width: 10px;
+                                            height: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .panelBody {
+                    padding: 4px 12px 4px 60px;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 17px;
+                    color: rgb(105, 116, 136);
+                    .wrapper {
+                        width: 100%;
+                        .subLink {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            text-decoration: none;
+                            min-height: 32px;
+                            height: auto;
+                            transition: background-color 0.3s ease 0s;
+                            background-color: rgb(255, 255, 255);
+                            position: relative;
+                            outline: 0px;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 16px;
+                            color: rgb(93, 62, 188);
+                            .name {
+                                line-height: 18px;
+                                color: rgb(82, 82, 82);
+                            }
+                            .subArrow {
+                                color: #5d3ebc;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                min-width: 24px;
+                                min-height: 24px;
+                                .subIcon {
+                                    width: 10px;
+                                    height: 10px;
+                                    fill: currentColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

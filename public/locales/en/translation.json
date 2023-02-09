@@ -106,5 +106,8 @@
             "info": "If you're a member of Getir",
             "text": "Login"
         }
+    },
+    "Categories": {
+        "title": "Categories"
     }
 }

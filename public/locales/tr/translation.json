@@ -106,5 +106,8 @@
             "info": "Getir'e üyeyseniz",
             "text": "Giriş yap"
         }
+    },
+    "Categories": {
+        "title": "Kategoriler"
     }
 }

@@ -27,7 +27,7 @@ function Navbar() {
     const dispatch = useDispatch()
     const { user, signupModal, loginModal, profileModal } = useSelector(state => state.auth)
     const { languageModal, selectLang, selectedLanguage } = useSelector(state => state.language)
-    const language = selectedLanguage === 'do' ? true : false
+    const language = localStorage.getItem("i18nextLng") === 'en' ? false : true
     const { t } = useTranslation()
     let arrowStyle = {
         transform: 'rotate(0deg)'
