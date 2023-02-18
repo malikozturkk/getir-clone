@@ -2,6 +2,7 @@ import React from 'react'
 import { tests } from '../data/test'
 import styles from "../styles/layout/Categories.module.scss"
 import { useTranslation } from "react-i18next"
+import { useSelector } from "react-redux"
 import Link from 'next/link'
 import Image from 'next/image'
 import ArrowDown from "./assets/svg/navbar/arrowDown.svg"
@@ -9,6 +10,8 @@ import ArrowRight from "./assets/svg/header/arrowRight.svg"
 import { useState } from 'react'
 function Categories() {
   const { t } = useTranslation()
+  const { selectedLanguage } = useSelector(state => state.language)
+  const lang = selectedLanguage === 'do' ? 'tr' : 'en'
   const [showCollapse, setShowCollapse] = useState("yeni-urunler")
   const [subIndex, setSubIndex] = useState(0)
   return (
@@ -30,7 +33,7 @@ function Categories() {
                 <div className={styles.panelHeader}>
                   <span className={styles.text}>
                     <div className={styles.wrapper}>
-                      <Link href='/' className={styles.link}>
+                      <Link href='/' scroll={false} className={styles.link}>
                         <figure className={styles.imageWrapper}>
                           <Image 
                             className={styles.image}
@@ -51,24 +54,22 @@ function Categories() {
                   </span>
                 </div>
               </div>
-              <div key={index} className={styles.panelBody}>
-                {test.subCategories.map((subCategory, index) => (
-                  <>
-                    {showCollapse === test.slug &&
-                      <div className={styles.wrapper} onClick={() => setSubIndex(index)}>
-                        <Link href='/' className={styles.subLink}>
-                          <span className={styles.name}>{subCategory.name}</span>
-                          <div className={styles.subArrow}>
-                            {index === subIndex &&
-                              <ArrowRight className={styles.subIcon} />
-                            }
-                          </div>
-                        </Link>
-                      </div>
-                  }
-                  </>
-                ))}  
-              </div>  
+              {showCollapse === test.slug &&
+                <div key={index} className={styles.panelBody}>
+                  {test.subCategories.map((subCategory, index) => (
+                    <div key={index} className={styles.wrapper} onClick={() => setSubIndex(index)}>
+                      <Link href='/' scroll={false} className={styles.subLink}>
+                        <span className={styles.name}>{subCategory.name}</span>
+                        <div className={styles.subArrow}>
+                          {index === subIndex &&
+                            <ArrowRight className={styles.subIcon} />
+                          }
+                        </div>
+                      </Link>
+                    </div>
+                  ))}  
+                </div> 
+              } 
             </div>
           ))}
         </div>

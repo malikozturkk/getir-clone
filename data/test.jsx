@@ -6,7 +6,23 @@ export const tests = [
   "image": "new-products.jpg",
   "subCategories": [
    {
-    "name": "Yeni Ürünler"
+    "name": "Yeni Ürünler",
+    "products": [
+        {
+            "id": 1,
+            "name": "Clear Men 3in1 Mentollü",
+            "shortDescription": "350 ml",
+            "priceText": "₺69,99",
+            "price": 69.99,
+            "struckPriceText": "₺86,99",
+            "struckPrice": 86.99,
+            "images": [
+                {
+                    "name": "new-products.jpg"
+                }
+            ]
+        }
+    ]
    }
   ]
  },

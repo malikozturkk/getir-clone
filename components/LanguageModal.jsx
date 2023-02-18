@@ -51,7 +51,7 @@ function LanguageModal() {
                     <div className={styles.main}>
                         <div className={styles.languageForm}>
                             {languageList.map((language, index) => (
-                                <label className={styles.radioLabel} onClick={selectLanguage}>
+                                <label key={index} className={styles.radioLabel} onClick={selectLanguage}>
                                     <span className={styles.radioInput}>
                                         <input type="radio" className={styles.radio} id={`language-${index}`} name="language" value={language.id} />
                                         <span className={`${styles.radioSpan} ${language.id === selectedRadio ? styles.checked : null}`} ></span>

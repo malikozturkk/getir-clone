@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "../styles/layout/Navbar.module.scss"
 import Link from 'next/link'
 import ProfileComponent from "../components/Profile"
@@ -27,7 +27,9 @@ function Navbar() {
     const dispatch = useDispatch()
     const { user, signupModal, loginModal, profileModal } = useSelector(state => state.auth)
     const { languageModal, selectLang, selectedLanguage } = useSelector(state => state.language)
-    const language = localStorage.getItem("i18nextLng") === 'en' ? false : true
+    const initialState = {
+        language: typeof window !== "undefined" ? window.localStorage.getItem("i18nextLng") : false
+    }
     const { t } = useTranslation()
     let arrowStyle = {
         transform: 'rotate(0deg)'
@@ -55,7 +57,7 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getiryemek' className={styles.itemUrl}>
                                 <figure className={styles.figure2}>
-                                    {language 
+                                    {initialState.language === 'tr' 
                                     ?
                                         <GetirYemek className={styles.logo} viewBox="0 0 131 24" />
                                     :
@@ -69,7 +71,7 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getirbuyuk' className={styles.itemUrl}>
                                 <figure className={styles.figure3}>
-                                    {language 
+                                    {initialState.language === 'tr' 
                                     ?
                                         <GetirBuyuk className={styles.logo} viewBox="0 0 122 24" />
                                     :
@@ -83,7 +85,7 @@ function Navbar() {
                         <div className={styles.itemList}>
                             <Link href='/getirsu' className={styles.itemUrl}>
                                 <figure className={styles.figure4}>
-                                    {language 
+                                    {initialState.language === 'tr' 
                                     ?
                                         <GetirSu className={styles.logo} viewBox="0 0 210 64" />
                                     :

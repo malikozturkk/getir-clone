@@ -52,7 +52,7 @@ function Sliders() {
       <div className={slider.container}>
         <Slider {...settings} className={slider.slider}>
           {images.map((image, index) => (
-            <div className={slider.div}>
+            <div key={index} className={slider.div}>
               <Image src={image} className={slider.image} alt="Slider Images" width={400} height={200} key={index} />
           </div>
           ))}

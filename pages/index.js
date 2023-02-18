@@ -1,5 +1,5 @@
 import Basket from "../components/Basket"
-import ProductList from "../components/productList"
+import ProductList from "../components/ProductList"
 import InfoWrapper from "../components/infoWrapper"
 import Sliders from "../components/Slider"
 import Categories from "../components/Categories"
