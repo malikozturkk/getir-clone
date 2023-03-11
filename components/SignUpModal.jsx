@@ -152,7 +152,7 @@ function SignUpModal() {
                                         <span className={styles.info}>{t('SignUpModal.news')}</span>
                                     </label>
                                 </div>
-                                <span className={styles.lightningText}>{t('SignUpModal.lightning.1')}<Link className={styles.link} href="https://agreements.getir.com/privacy_notice18112022_100_TR_tr_2.html" target="_blank">{t('SignUpModal.lightning.2')}</Link>{t('SignUpModal.lightning.3')}<Link className={styles.link} href="https://agreements.getir.com/tcs2282022_200_TR_tr_4.html" target="_blank">{t('SignUpModal.lightning.4')}</Link>{t('SignUpModal.lightning.5')}</span>
+                                <span className={styles.lightningText}>{t('SignUpModal.lightning.1')}<Link className={styles.link} href="https://agreements.getir.com/privacy_notice18112022_100_TR_tr_2.html" target="_blank" scroll={false}>{t('SignUpModal.lightning.2')}</Link>{t('SignUpModal.lightning.3')}<Link className={styles.link} href="https://agreements.getir.com/tcs2282022_200_TR_tr_4.html" target="_blank" scroll={false}>{t('SignUpModal.lightning.4')}</Link>{t('SignUpModal.lightning.5')}</span>
                             </div>
                             <div className={styles.loginButtonMain}>
                                 <div className={styles.buttonDiv}>

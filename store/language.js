@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+const cookieLanguage = {
+    language: typeof window !== "undefined" ? window.localStorage.getItem("i18nextLng") : false
+}
+
 const initialState = {
     languageModal: false,
-    selectedLanguage: 'do',
-    selectLang: 'Türkçe (TR)'
+    selectedLanguage: cookieLanguage.language === 'tr' ? 'do' : '7o',
+    selectLang: cookieLanguage.language === 'tr' ? 'Türkçe (TR)' : 'English (EN)'
 }
 
 const language = createSlice({

@@ -154,7 +154,7 @@ function Footer() {
                     <ol className={footer.list}>
                         <li className={footer.listItem}>
                             <div className={footer.listItemDiv}>
-                                <Link href='/' className={footer.listLink}>
+                                <Link href='/' scroll={false} className={footer.listLink}>
                                     <span className={footer.info}>{t('Footer.information')}</span>
                                 </Link>
                             </div>

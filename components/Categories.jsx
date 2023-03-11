@@ -2,7 +2,6 @@ import React from 'react'
 import { tests } from '../data/test'
 import styles from "../styles/layout/Categories.module.scss"
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 import Link from 'next/link'
 import Image from 'next/image'
 import ArrowDown from "./assets/svg/navbar/arrowDown.svg"
@@ -10,8 +9,6 @@ import ArrowRight from "./assets/svg/header/arrowRight.svg"
 import { useState } from 'react'
 function Categories() {
   const { t } = useTranslation()
-  const { selectedLanguage } = useSelector(state => state.language)
-  const lang = selectedLanguage === 'do' ? 'tr' : 'en'
   const [showCollapse, setShowCollapse] = useState("yeni-urunler")
   const [subIndex, setSubIndex] = useState(0)
   return (

@@ -15,7 +15,7 @@ function Header() {
             <div className={styles.mainLogo}>
                 <div className={styles.mainLogoElement}>
                     <div className={styles.mainLogoItem}>
-                        <Link href='/' className={styles.mainLogoUrl}>
+                        <Link href='/' scroll={false} className={styles.mainLogoUrl}>
                             <figure className={styles.mainLogoFigure}>
                                 <Logo />
                             </figure>

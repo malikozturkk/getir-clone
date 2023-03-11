@@ -21,7 +21,7 @@ function Profile() {
             <ul className={styles.unOrderedList}>
                 <li className={styles.accountList}>
                     <div className={styles.accountDiv}>
-                        <Link href="/hesap" className={styles.accountLink}>
+                        <Link href="/hesap" className={styles.accountLink} scroll={false}>
                             <div className={styles.accountContainer}>
                                 <div className={styles.accountIcons}>
                                     <div className={styles.accountIcon}>
@@ -38,32 +38,32 @@ function Profile() {
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/adreslerim/" className={styles.otherLink}>{t('Profile.address')}</Link>
+                        <Link href="/hesap/adreslerim/" className={styles.otherLink} scroll={false}>{t('Profile.address')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/favori-urunlerim/" className={styles.otherLink}>{t('Profile.favorite')}</Link>
+                        <Link href="/hesap/favori-urunlerim/" className={styles.otherLink} scroll={false}>{t('Profile.favorite')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/gecmis-siparislerim/" className={styles.otherLink}>{t('Profile.previous')}</Link>
+                        <Link href="/hesap/gecmis-siparislerim/" className={styles.otherLink} scroll={false}>{t('Profile.previous')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/odeme-yontemlerim/" className={styles.otherLink}>{t('Profile.paymentMethods')}</Link>
+                        <Link href="/hesap/odeme-yontemlerim/" className={styles.otherLink} scroll={false}>{t('Profile.paymentMethods')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/fatura/" className={styles.otherLink}>{t('Profile.invoice')}</Link>
+                        <Link href="/hesap/fatura/" className={styles.otherLink} scroll={false}>{t('Profile.invoice')}</Link>
                     </div>
                 </li>
                 <li className={styles.otherList}>
                     <div className={styles.otherDiv}>
-                        <Link href="/hesap/iletisim-tercihleri/" className={styles.otherLink}>{t('Profile.communication')}</Link>
+                        <Link href="/hesap/iletisim-tercihleri/" className={styles.otherLink} scroll={false}>{t('Profile.communication')}</Link>
                     </div>
                 </li>
                 <li className={styles.lineList}>

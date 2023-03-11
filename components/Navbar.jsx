@@ -46,7 +46,7 @@ function Navbar() {
                 <div className={styles.navLeft}>
                     <div className={styles.firstItem}>
                         <div className={styles.itemList}>
-                            <Link href='/' className={styles.itemUrl}>
+                            <Link href='/' className={styles.itemUrl} scroll={false}>
                                 <figure className={styles.figure1}>
                                     <Getir className={styles.logo} viewBox="0 0 53 24" />
                                 </figure>
@@ -55,7 +55,7 @@ function Navbar() {
                     </div>
                     <div className={styles.secondItem}>
                         <div className={styles.itemList}>
-                            <Link href='/getiryemek' className={styles.itemUrl}>
+                            <Link href='/getiryemek' className={styles.itemUrl} scroll={false}>
                                 <figure className={styles.figure2}>
                                     {initialState.language === 'tr' 
                                     ?
@@ -69,7 +69,7 @@ function Navbar() {
                     </div>
                     <div className={styles.thirdItem}>
                         <div className={styles.itemList}>
-                            <Link href='/getirbuyuk' className={styles.itemUrl}>
+                            <Link href='/getirbuyuk' className={styles.itemUrl} scroll={false}>
                                 <figure className={styles.figure3}>
                                     {initialState.language === 'tr' 
                                     ?
@@ -83,7 +83,7 @@ function Navbar() {
                     </div>
                     <div className={styles.fourthItem}>
                         <div className={styles.itemList}>
-                            <Link href='/getirsu' className={styles.itemUrl}>
+                            <Link href='/getirsu' className={styles.itemUrl} scroll={false}>
                                 <figure className={styles.figure4}>
                                     {initialState.language === 'tr' 
                                     ?
@@ -108,7 +108,7 @@ function Navbar() {
                     {user &&
                         <>
                             <div className={styles.secondItem}>
-                                <Link href='/kampanyalar' className={styles.itemUrl}>
+                                <Link href='/kampanyalar' className={styles.itemUrl} scroll={false}>
                                     <div className={styles.campaignsDiv}>
                                         <Campaigns className={styles.campaignsIcon} />
                                     </div>

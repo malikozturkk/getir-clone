@@ -95,7 +95,7 @@ function LoginModal() {
                                 <div className={styles.lightningMain}>
                                     {t('LoginModal.lightningText')}
                                     <div className={styles.lightningClick}>
-                                        <Link href='https://getir.com/yardim/kvkk/' className={styles.lightningLink} target="_blank">
+                                        <Link href='https://getir.com/yardim/kvkk/' scroll={false} className={styles.lightningLink} target="_blank">
                                             {t('LoginModal.lightningClick')}
                                         </Link>
                                     </div>

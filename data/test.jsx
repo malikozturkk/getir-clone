@@ -10,18 +10,12 @@ export const tests = [
     "products": [
         {
             "id": 1,
-            "name": "Clear Men 3in1 Mentollü",
-            "shortDescription": "350 ml",
-            "priceText": "₺69,99",
-            "price": 69.99,
-            "struckPriceText": "₺86,99",
-            "struckPrice": 86.99,
-            "images": [
-                {
-                    "name": "new-products.jpg"
-                }
-            ]
-        }
+            "name": "Ramazan Kolisi Büyük",
+            "shortDescription": "20 ürün",
+            "priceText": "₺349,90",
+            "price": 349.90,
+            "images": "1.jpg"
+        },
     ]
    }
   ]
@@ -33,37 +27,491 @@ export const tests = [
   "image": "wather.jpeg",
   "subCategories": [
    {
-    "name": "Su"
+    "name": "Su",
+    "products": [
+        {
+            "id": 1,
+            "name": "Kuzeyden",
+            "shortDescription": "6 x 1,5 L",
+            "priceText": "₺35,95",
+            "price": 35.95,
+            "images": "2.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Damla Su & Schweppes Mandalina",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺39,60",
+            "price": 39.60,
+            "struckPriceText": "₺49,50",
+            "struckPrice": 49.50,
+            "images": "3.png"
+        },
+        {
+            "id": 3,
+            "name": "Herby & Kuzeyden İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺47,50",
+            "price": 47.50,
+            "struckPriceText": "₺58,94",
+            "struckPrice": 58.94,
+            "images": "4.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Erikli",
+            "shortDescription": "6 x 1 L",
+            "priceText": "₺49,50",
+            "price": 49.50,
+            "images": "5.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Kuzeyden",
+            "shortDescription": "12 x 330 ml",
+            "priceText": "₺46,95",
+            "price": 46.95,
+            "images": "6.jpg"
+        }
+    ]
    },
    {
-    "name": "Gazlı İçecek"
+    "name": "Gazlı İçecek",
+    "products": [
+        {
+            "id": 1,
+            "name": "Pepsi Max",
+            "shortDescription": "1 L",
+            "priceText": "₺18,99",
+            "price": 18.99,
+            "images": "7.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Coca-Cola & Fanta & Sprite Üçlüsü",
+            "shortDescription": "3 x 1 L",
+            "priceText": "₺55,99",
+            "price": 55.99,
+            "struckPriceText": "₺62,10",
+            "struckPrice": 62.10,
+            "images": "8.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Schweppes Üçlüsü",
+            "shortDescription": "3 x 1 L",
+            "priceText": "₺64,80",
+            "price": 64.80,
+            "struckPriceText": "₺86,40",
+            "struckPrice": 86.40,
+            "images": "9.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Coca-Cola Zero & Indomie",
+            "shortDescription": "3 Ürün",
+            "priceText": "₺28,10",
+            "price": 28.10,
+            "struckPriceText": "₺32,68",
+            "struckPrice": 32.68,
+            "images": "10.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Pepsi, Fruko & Yedigün",
+            "shortDescription": "3 Ürün",
+            "priceText": "₺50,40",
+            "price": 50.40,
+            "struckPriceText": "₺55,97",
+            "struckPrice": 55.97,
+            "images": "11.jpg"
+        }
+    ]
    },
    {
-    "name": "Maden Suyu"
+    "name": "Maden Suyu",
+    "products": [
+        {
+            "id": 1,
+            "name": "Kızılay Erzincan",
+            "shortDescription": "6 x 200 ml",
+            "priceText": "₺21,99",
+            "price": 21.99,
+            "images": "12.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Kızılay Afyonkarahisar",
+            "shortDescription": "6 x 200 ml",
+            "priceText": "₺21,99",
+            "price": 21.99,
+            "images": "13.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Kınık Sade",
+            "shortDescription": "6 x 200 ml",
+            "priceText": "₺23,99",
+            "price": 23.99,
+            "images": "14.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "S.Pellegrino Sade",
+            "shortDescription": "6 x 250 ml",
+            "priceText": "₺94,99",
+            "price": 94.99,
+            "struckPriceText": "₺135,60",
+            "struckPrice": 135.60,
+            "images": "15.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Perrier Sade",
+            "shortDescription": "4 x 330 ml",
+            "priceText": "₺108,50",
+            "price": 108.50,
+            "images": "16.jpeg"
+        }
+    ]
    },
    {
-    "name": "Ayran & Kefir"
+    "name": "Ayran & Kefir",
+    "products": [
+        {
+            "id": 1,
+            "name": "Eker Ayran",
+            "shortDescription": "1 L",
+            "priceText": "₺22,50",
+            "price": 22.50,
+            "images": "17.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Eker Kefir Ananaslı",
+            "shortDescription": "200 ml",
+            "priceText": "₺11,99",
+            "price": 11.99,
+            "images": "18.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Sütaş Ayran Genç Şişe",
+            "shortDescription": "250 ml",
+            "priceText": "₺8,70",
+            "price": 8.70,
+            "images": "19.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Eker Ayran",
+            "shortDescription": "293 ml",
+            "priceText": "₺9,80",
+            "price": 9.80,
+            "images": "20.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Altınkılıç Sade Kefir",
+            "shortDescription": "1 L",
+            "priceText": "₺32,50",
+            "price": 32.50,
+            "images": "21.jpg"
+        }
+    ]
    },
    {
-    "name": "Soğuk Çay & Kahve"
+    "name": "Soğuk Çay & Kahve",
+    "products": [
+        {
+            "id": 1,
+            "name": "Coca-Cola Zero & Fuse Tea Karpuz",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺34,70",
+            "price": 34.70,
+            "struckPriceText": "₺38.50",
+            "struckPrice": 38.50,
+            "images": "22.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Ruffles & Lipton İce Tea",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺35,99",
+            "price": 35.99,
+            "struckPriceText": "₺42,20",
+            "struckPrice": 42.20,
+            "images": "23.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Lipton Limon & Şeftali",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺37,10",
+            "price": 37.10,
+            "struckPriceText": "₺41,20",
+            "struckPrice": 41.20,
+            "images": "24.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Limonata & Fuse Tea İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺32,20",
+            "price": 32.20,
+            "struckPriceText": "₺33,90",
+            "struckPrice": 33.90,
+            "images": "25.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Pepsi & Lipton Ice Tea",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺33,70",
+            "price": 33.70,
+            "struckPriceText": "₺39,59",
+            "struckPrice": 39.59,
+            "images": "26.jpg"
+        }
+    ]
    },
    {
-    "name": "Meyve Suyu"
+    "name": "Meyve Suyu",
+    "products": [
+        {
+            "id": 1,
+            "name": "Herby Fit Shot",
+            "shortDescription": "2 x 60 ml",
+            "priceText": "₺46,80",
+            "price": 46.80,
+            "struckPriceText": "₺55,00",
+            "struckPrice": 55.00,
+            "images": "27.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Limonata & Fuse Tea İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺32,20",
+            "price": 32.20,
+            "struckPriceText": "₺33,90",
+            "struckPrice": 33.90,
+            "images": "28.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Pulpy Portakal & Fuse Tea Limon",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺39,50",
+            "price": 39.50,
+            "struckPriceText": "₺41,60",
+            "struckPrice": 41.60,
+            "images": "29.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Cappy Geleneksel Limonata",
+            "shortDescription": "2 x 1 L",
+            "priceText": "₺30,60",
+            "price": 30.60,
+            "struckPriceText": "₺32,20",
+            "struckPrice": 32.20,
+            "images": "30.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Herby Defense Shot",
+            "shortDescription": "",
+            "priceText": "₺46,80",
+            "price": 46.80,
+            "struckPriceText": "₺55,00",
+            "struckPrice": 55.00,
+            "images": "31.jpeg"
+        }
+    ]
    },
    {
-    "name": "Kahve"
+    "name": "Kahve",
+    "products": [
+        {
+            "id": 1,
+            "name": "Nescafé Latte",
+            "shortDescription": "10'lu",
+            "priceText": "₺27,50",
+            "price": 27.50,
+            "images": "32.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Kurukahveci Mehmet Efendi Türk Kahvesi",
+            "shortDescription": "100 g",
+            "priceText": "₺25,99",
+            "price": 25.99,
+            "images": "33.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Kurukahveci Mehmet Efendi Türk Kahvesi Teneke Ambalaj",
+            "shortDescription": "250 g",
+            "priceText": "₺89,70",
+            "price": 89.70,
+            "images": "34.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Orta Kavrulmuş Türk Kahvesi",
+            "shortDescription": "100 g",
+            "priceText": "₺30,99",
+            "price": 30.99,
+            "images": "35.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Café Crown 3'ü 1 Arada",
+            "shortDescription": "10'lu",
+            "priceText": "₺25,99",
+            "price": 25.99,
+            "struckPriceText": "₺30,40",
+            "struckPrice": 30.40,
+            "images": "36.jpeg"
+        }
+    ]
    },
    {
-    "name": "Çay"
+    "name": "Çay",
+    "products": [
+        {
+            "id": 1,
+            "name": "Doğadan Bitki Çayı İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺48,20",
+            "price": 48.20,
+            "struckPriceText": "₺59,69",
+            "struckPrice": 59.69,
+            "images": "37.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Doğadan İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "21,71",
+            "price": 21.71,
+            "struckPriceText": "₺41,69",
+            "struckPrice": 41.69,
+            "images": "38.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Herby & Kuzeyden İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺47,50",
+            "price": 47.50,
+            "struckPriceText": "₺58,94",
+            "struckPrice": 58.94,
+            "images": "39.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Herby İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺56,99",
+            "price": 56.99,
+            "struckPriceText": "₺71,49",
+            "struckPrice": 71.49,
+            "images": "40.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Herby Detox Tea Paketi",
+            "shortDescription": "3 Ürün",
+            "priceText": "₺100,80",
+            "price": 100.80,
+            "struckPriceText": "₺131,97",
+            "struckPrice": 131.97,
+            "images": "41.jpg"
+        }
+    ]
    },
    {
-    "name": "Enerji İçeceği"
+    "name": "Enerji İçeceği",
+    "products": [
+        {
+            "id": 1,
+            "name": "Red Bull",
+            "shortDescription": "4 x 250 ml",
+            "priceText": "₺84,99",
+            "price": 84.99,
+            "images": "42.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Red Bull Şekersiz",
+            "shortDescription": "4 x 250 ml",
+            "priceText": "₺84,99",
+            "price": 84.99,
+            "images": "43.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Red Bull",
+            "shortDescription": "6 x 250 ml",
+            "priceText": "₺123,99",
+            "price": 123.99,
+            "images": "44.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Red Bull",
+            "shortDescription": "250 ml",
+            "priceText": "₺22,70",
+            "price": 22.70,
+            "images": "45.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Red Bull",
+            "shortDescription": "355 ml",
+            "priceText": "₺30,99",
+            "price": 30.99,
+            "images": "46.jpeg"
+        }
+    ]
    },
    {
-    "name": "Fonksiyonel İçecekler"
+    "name": "Fonksiyonel İçecekler",
+    "products": [
+        {
+            "id": 1,
+            "name": "Dörtlü Powerade Paketi",
+            "shortDescription": "4 Ürün",
+            "priceText": "₺82,80",
+            "price": 82.80,
+            "struckPriceText": "₺91,96",
+            "struckPrice": 91.96,
+            "images": "47.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Powerade",
+            "shortDescription": "500 ml",
+            "priceText": "22,99",
+            "price": 22.99,
+            "images": "48.jpeg"
+        }
+    ]
    },
    {
-    "name": "Buz"
+    "name": "Buz",
+    "products": [
+        {
+            "id": 1,
+            "name": "Keyf-i Buz Hazır Buz Küpü",
+            "shortDescription": "24 Adet",
+            "priceText": "₺15,99",
+            "price": 15.99,
+            "images": "49.jpeg"
+        }
+    ]
    }
   ]
  },
