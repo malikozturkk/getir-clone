@@ -394,7 +394,7 @@ export const tests = [
             "id": 2,
             "name": "Doğadan İkilisi",
             "shortDescription": "2 Ürün",
-            "priceText": "21,71",
+            "priceText": "₺21,71",
             "price": 21.71,
             "struckPriceText": "₺41,69",
             "struckPrice": 41.69,
@@ -494,7 +494,7 @@ export const tests = [
             "id": 2,
             "name": "Powerade",
             "shortDescription": "500 ml",
-            "priceText": "22,99",
+            "priceText": "₺22,99",
             "price": 22.99,
             "images": "48.jpeg"
         }
@@ -522,10 +522,95 @@ export const tests = [
   "image": "fruit.jpeg",
   "subCategories": [
    {
-    "name": "Meyve"
+    "name": "Meyve",
+    "products": [
+        {
+            "id": 1,
+            "name": "Herby Detoks Çayı & Muz",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺60,99",
+            "price": 60.99,
+            "struckPriceText": "₺73,98",
+            "struckPrice": 73.98,
+            "images": "50.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Meyve Paketi",
+            "shortDescription": "3 ürün",
+            "priceText": "₺69,50",
+            "price": 69.50,
+            "images": "51.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Yaban Mersini & Nar Tanesi İkilisi",
+            "shortDescription": "500 ml",
+            "priceText": "₺61,99",
+            "price": 61.99,
+            "struckPriceText": "₺72,98",
+            "struckPrice": 72.98,
+            "images": "52.jpg"
+        }
+    ]
    },
    {
-    "name": "Sebze"
+    "name": "Sebze",
+    "products": [
+        {
+            "id": 1,
+            "name": "Ekonomik Patates",
+            "shortDescription": "3 kg",
+            "priceText": "₺32,99",
+            "price": 32.99,
+            "images": "53.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Salatalık & Limon İkilisi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺36,99",
+            "price": 36.99,
+            "images": "54.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Kokteyl Domates",
+            "shortDescription": "500 g",
+            "priceText": "₺16,99",
+            "price": 16.99,
+            "images": "55.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Krema & Mantar Paketi",
+            "shortDescription": "2 Ürün",
+            "priceText": "₺34,99",
+            "price": 34.99,
+            "images": "56.jpeg"
+        }
+    ]
+   },
+   {
+    "name": "Yeşillik",
+    "products": [
+        {
+            "id": 1,
+            "name": "Ayıklanmış Maydanoz",
+            "shortDescription": "50 g",
+            "priceText": "₺6,99",
+            "price": 6.99,
+            "images": "57.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Ayıklanmış Roka",
+            "shortDescription": "70 g",
+            "priceText": "₺11,99",
+            "price": 11.99,
+            "images": "58.jpeg"
+        }
+    ]
    }
   ]
  },
