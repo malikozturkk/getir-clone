@@ -6,12 +6,12 @@ import Footer from './Footer'
 function Layout({ children }) {
   return (
     <div>
-        <div className='Header'>
-            <Navbar />
-            <Header />
-        </div>
-        {children}
-        <Footer />
+      <div className='Header'>
+        <Navbar />
+        <Header />
+      </div>
+      {children}
+      <Footer />
     </div>
   )
 }

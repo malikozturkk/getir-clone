@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/layout/ProductList.module.scss"
 import Link from "next/link"
 import Image from 'next/image'
 import BreadCrumb from "./assets/svg/header/breadcrumb.svg"
 import ProductCounter from "./assets/svg/homepage/productCounter.svg"
 import Test from "./assets/jpg/test.jpg"
-import { useSelector } from "react-redux"
+import { tests } from '../data/test'
+import { useSelector, useDispatch } from "react-redux"
+import { actionProducts } from "../store/products"
 
 function ProductList() {
-  const { products } = useSelector(state => state.products)
-  console.log(products, 'products redux')
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(actionProducts(tests))
+  }, [])
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -36,7 +40,7 @@ function ProductList() {
             </li>
           </ul>
         </h5>
-      </div>  
+      </div>
       <div className={styles.cardWrapper}>
         <div className={styles.main}>
           <div className={styles.categoryProducts}>
