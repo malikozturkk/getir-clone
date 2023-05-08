@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/layout/ProductList.module.scss"
-import Link from "next/link"
-import Image from 'next/image'
 import BreadCrumb from "./assets/svg/header/breadcrumb.svg"
-import ProductCounter from "./assets/svg/homepage/productCounter.svg"
-import Test from "./assets/jpg/test.jpg"
-import { tests } from '../data/test'
+import { useSelector } from "react-redux"
+import ProductCard from './ProductCard'
 
-function ProductList() {
-  const addCart = () => {
-    console.log('sepete eklendi')
-  }
+function ProductList({ id }) {
+  const [products, setProducts] = useState([])
+  const { selectCategory, selectSubCategory, selectSubCategories } = useSelector(state => state.products)
+  useEffect(() => {
+    fetch('http://localhost:3001/products')
+      .then(data => data.json())
+      .then(data => {
+        setProducts(data)
+      });
+  }, [])
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -19,7 +22,7 @@ function ProductList() {
             <li className={styles.itemWrapper}>
               <div className={styles.breadcrumbItem}>
                 <div className={styles.wrapper}>
-                  <Link href='/' className={styles.link} scroll={false}>Su & İçecek</Link>
+                  <div className={styles.link} scroll={false}>{selectCategory}</div>
                 </div>
               </div>
               <div className={styles.breadcrumbSeparator}>
@@ -31,53 +34,42 @@ function ProductList() {
             <li className={styles.itemWrapper}>
               <div className={styles.breadcrumbItem}>
                 <div className={styles.wrapper}>
-                  <Link href='/' className={styles.link} scroll={false}>Su</Link>
+                  <div className={styles.link} scroll={false}>{selectSubCategory}</div>
                 </div>
               </div>
             </li>
           </ul>
         </h5>
       </div>
-      <div className={styles.cardWrapper}>
-        <div className={styles.main}>
-          <div className={styles.categoryProducts}>
-            <div className={styles.main}>
-              <div className={styles.wrapper}>
-                <div className={styles.cardWrapper}>
-                  {tests.map((test) => {
-                    test.subCategories.map((subCategory) => {
-                      subCategory.products?.map((product) => {
-                        console.log(product, 'product')
-                        return (
-                          <article className={styles.productMain}>
-                            <div className={styles.imageMain}>
-                              <Link href='/' className={styles.imageLink} scroll={false}>
-                                <figure className={styles.imageFigure}>
-                                  <Image className={styles.image} src={Test} width={120} height={120} />
-                                </figure>
-                                <div className={styles.counterMain} onClick={addCart}>
-                                  <div className={styles.wrapper}>
-                                    <button className={styles.counterButton}>
-                                      <div className={styles.iconMain}>
-                                        <ProductCounter className={styles.icon} />
-                                      </div>
-                                    </button>
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                            <div className={styles.priceMain}>
-                              <span className={styles.price}>{product.priceText}</span>
-                            </div>
-                            <span className={styles.titleMain}>Kuzeyden</span>
-                            <div className={styles.paragraphMain}>
-                              <p className={styles.paragraph}>6 x 1,5 L</p>
-                            </div>
-                          </article>
-                        )
-                      })
-                    })
-                  })}
+      <div className={styles.cardPartials}>
+        <div className={styles.cardWrapper}>
+          <div className={styles.main}>
+            <div className={styles.categoryProducts}>
+              <div className={styles.main}>
+                <div className={styles.wrapper}>
+                  <div className={styles.cardWrapper}>
+                    {products.map((product) => {
+                      return (
+                        product.subCategories.map((subCategory) => {
+                          return (
+                            subCategory.products?.map((subProduct) => {
+                              if (id === product.slug) {
+                                return (
+                                  selectSubCategories.map((selectSubCategory, index) => {
+                                    if (selectSubCategory.name === subCategory.name) {
+                                      return (
+                                        <ProductCard subProduct={subProduct} subCategory={subCategory} index={index} />
+                                      )
+                                    }
+                                  })
+                                )
+                              }
+                            })
+                          )
+                        })
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
             </div>

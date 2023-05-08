@@ -7,6 +7,7 @@ import React, { Suspense } from 'react'
 import '../i18next'
 function MyApp({ Component, pageProps }) {
   return (
+
     <Provider store={store}>
       <Suspense fallback={(<div>Loading</div>)}>
         <Layout>

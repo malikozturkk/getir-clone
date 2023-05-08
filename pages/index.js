@@ -15,10 +15,10 @@ export default function Home() {
           <Sliders />
           <div className={home.contents}>
             <div className={home.categories}>
-              <Categories />
+              <Categories id={0} />
             </div>
             <div className={home.productList}>
-              <ProductList />
+              <ProductList id='yeni-urunler' />
             </div>
             <div className={home.basket}>
               <Basket />

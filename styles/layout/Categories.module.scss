@@ -2,12 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     .category {
         margin-bottom: 8px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         .title {
             font-size: 14px;
             color: rgb(25, 25, 25);
@@ -16,6 +18,7 @@
             margin: 0;
         }
     }
+
     .cardWrapper {
         max-height: calc(100vh - 170px);
         display: flex;
@@ -30,17 +33,24 @@
         border-radius: 8px;
         font-weight: 600;
         font-size: 16px;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+
         .collapse {
             padding: 8px 0px;
             width: 100%;
             background: rgb(255, 255, 255);
             box-shadow: rgb(93 62 188 / 4%) 0px 6px 16px;
             border-radius: 8px;
+
             .panel {
                 &.active {
                     .panelHeaderWrapper {
                         .panelHeader {
                             background-color: #f3f0fe;
+
                             .text {
                                 .wrapper {
                                     .link {
@@ -57,13 +67,16 @@
                         }
                     }
                 }
+
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
+
                 .panelHeaderWrapper {
                     display: flex;
                     align-items: center;
                     width: 100%;
+
                     .panelHeader {
                         padding: 4px 12px;
                         cursor: pointer;
@@ -72,9 +85,11 @@
                         display: flex;
                         align-items: center;
                         width: 100%;
+
                         &:hover {
                             background-color: #f3f0fe;
                         }
+
                         .text {
                             flex: 1 1 0%;
                             display: flex;
@@ -82,8 +97,10 @@
                             font-size: 13px;
                             line-height: 18px;
                             color: rgb(93, 62, 188);
+
                             .wrapper {
                                 width: 100%;
+
                                 .link {
                                     width: 100%;
                                     text-decoration: none;
@@ -95,6 +112,7 @@
                                     font-size: 14px;
                                     line-height: 16px;
                                     color: rgb(93, 62, 188);
+
                                     .imageWrapper {
                                         display: inline-flex;
                                         border: 1px solid rgba(25, 25, 25, 0.1);
@@ -105,6 +123,7 @@
                                         align-items: center;
                                         justify-content: center;
                                         margin: 0px;
+
                                         .image {
                                             width: 100%;
                                             height: 100%;
@@ -115,17 +134,20 @@
                                             border-style: none;
                                         }
                                     }
+
                                     .text {
                                         text-align: left;
                                         margin-left: 16px;
                                         display: flex;
                                         flex-direction: column;
                                         align-items: flex-start;
+
                                         .name {
                                             color: #191919;
                                             line-height: 18px;
                                         }
                                     }
+
                                     .arrow {
                                         margin-left: auto;
                                         display: inline-flex;
@@ -133,6 +155,7 @@
                                         justify-content: center;
                                         min-width: 24px;
                                         min-height: 24px;
+
                                         .icon {
                                             color: rgb(161, 161, 161);
                                             transition: transform 0.5s ease 0s;
@@ -146,14 +169,17 @@
                         }
                     }
                 }
+
                 .panelBody {
                     padding: 4px 12px 4px 60px;
                     font-weight: normal;
                     font-size: 12px;
                     line-height: 17px;
                     color: rgb(105, 116, 136);
+
                     .wrapper {
                         width: 100%;
+
                         .subLink {
                             width: 100%;
                             display: flex;
@@ -170,10 +196,12 @@
                             font-size: 14px;
                             line-height: 16px;
                             color: rgb(93, 62, 188);
+
                             .name {
                                 line-height: 18px;
                                 color: rgb(82, 82, 82);
                             }
+
                             .subArrow {
                                 color: #5d3ebc;
                                 display: inline-flex;
@@ -181,6 +209,7 @@
                                 justify-content: center;
                                 min-width: 24px;
                                 min-height: 24px;
+
                                 .subIcon {
                                     width: 10px;
                                     height: 10px;
@@ -192,5 +221,9 @@
                 }
             }
         }
+    }
+
+    .cardWrapper::-webkit-scrollbar {
+        display: none;
     }
 }
