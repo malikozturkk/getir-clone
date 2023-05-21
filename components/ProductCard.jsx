@@ -3,7 +3,7 @@ import styles from "../styles/layout/ProductList.module.scss"
 import ProductCounter from "./assets/svg/homepage/productCounter.svg"
 import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
-import { actionAddBasket, actionBasketItemCount } from '../store/basket'
+import { actionAddBasket, actionDeleteBasket, actionRemoveBasket } from '../store/basket'
 import DeleteBasket from "./assets/svg/homepage/deleteBasket.svg"
 import DeleteProduct from "./assets/svg/homepage/deleteProduct.svg"
 
@@ -12,13 +12,12 @@ function ProductCard({ subProduct, subCategory, index }) {
     const dispatch = useDispatch()
     const addCart = () => {
         dispatch(actionAddBasket(subProduct));
-        console.log(basketList, 'basketList')
     }
-    const removeProduct = () => {
-        //dispatch(actionBasketItemCount(0));
+    const removeCart = () => {
+        dispatch(actionRemoveBasket(subProduct));
     }
-    const deleteProduct = () => {
-        //dispatch(actionBasketItemCount(basketItemCount - 1));
+    const deleteCart = () => {
+        dispatch(actionDeleteBasket(subProduct));
     }
     return (
         <>
@@ -41,7 +40,7 @@ function ProductCard({ subProduct, subCategory, index }) {
                                     <>
                                         {basket.basketItemCount <= 1 ?
                                             <div className={styles.removeProduct} key={index}>
-                                                <button type="button" className={styles.removeButton} onClick={removeProduct}>
+                                                <button type="button" className={styles.removeButton} onClick={removeCart}>
                                                     <div className={styles.removeButtonMain}>
                                                         <DeleteBasket />
                                                     </div>
@@ -49,7 +48,7 @@ function ProductCard({ subProduct, subCategory, index }) {
                                             </div>
                                             :
                                             <div className={styles.deleteProduct}>
-                                                <button type="button" className={styles.deleteButton} onClick={deleteProduct}>
+                                                <button type="button" className={styles.deleteButton} onClick={deleteCart}>
                                                     <div className={styles.deleteButtonMain}>
                                                         <DeleteProduct />
                                                     </div>
