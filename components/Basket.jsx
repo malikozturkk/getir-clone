@@ -20,9 +20,9 @@ function Basket() {
         <div className={styles.cardWrapper}>
           <div className={styles.wrapperMain}>
             <article className={styles.wrapper}>
-              {basketList.map((basket, index) => (
-                <div className={styles.main} key={index}>
-                  <div className={styles.productMain}>
+              <div className={styles.main}>
+                {basketList.map((basket, index) => (
+                  <div className={styles.productMain} key={index}>
                     <div className={styles.productInfo}>
                       <span className={styles.productName}>{basket.name}</span>
                       <span className={styles.productPrice}>{basket.priceText}</span>
@@ -53,8 +53,8 @@ function Basket() {
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
               <div className={styles.goToCartMain}>
                 <button className={styles.gotToCart}>Sepete git</button>
                 <div className={styles.totalPrice}>₺{basketTotalAmount}</div>

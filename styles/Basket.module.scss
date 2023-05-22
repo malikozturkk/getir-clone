@@ -85,6 +85,9 @@
                 margin-bottom: 4px;
                 overflow-wrap: anywhere;
                 overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
               }
 
               .productPrice {
@@ -238,6 +241,10 @@
                 }
               }
             }
+          }
+
+          .productMain:not(:last-child) {
+            border-bottom: 1px solid #f3f0fe;
           }
         }
 

@@ -5,6 +5,7 @@
     padding-left: 32px;
     padding-right: 32px;
     flex-shrink: 0;
+
     .container {
         display: flex;
         align-items: center;
@@ -14,15 +15,19 @@
         margin-left: auto;
         margin-right: auto;
         height: 100%;
+
         .mainLogo {
             margin-right: 15px;
             flex: 1 1 0%;
             display: flex;
+
             .mainLogoElement {
                 display: flex;
                 align-items: center;
+
                 .mainLogoItem {
                     display: inline-flex;
+
                     .mainLogoUrl {
                         position: relative;
                         outline: 0px;
@@ -31,6 +36,7 @@
                         line-height: 16px;
                         color: rgb(93, 62, 188);
                         text-decoration: none;
+
                         .mainLogoFigure {
                             background-color: transparent;
                             width: 100%;
@@ -46,25 +52,32 @@
                 }
             }
         }
+
         .mainSearchForm {
             margin-right: 15px;
             flex: 1 1 0%;
             display: flex;
+
             .mainSearchArticle {
                 display: flex;
                 margin-left: auto;
+
                 .form {
                     display: flex;
                     position: relative;
+
                     @media (min-width: 767px) {
                         width: 384px;
                     }
+
                     @media (min-width: 1023px) {
                         width: 472px;
                     }
+
                     @media (min-width: 1264px) {
                         width: 508px;
                     }
+
                     .container {
                         width: 100%;
                         display: flex;
@@ -72,12 +85,15 @@
                         overflow: hidden;
                         z-index: 2;
                         position: relative;
+
                         .searchFormMain {
                             width: 100%;
+
                             .main {
                                 display: flex;
                                 flex-direction: column;
                                 width: 100%;
+
                                 .general {
                                     padding-right: 24px;
                                     border: 0px;
@@ -93,6 +109,7 @@
                                     background-color: rgb(255, 255, 255);
                                     transition: all 0.2s ease 0s;
                                     flex-direction: row;
+
                                     .buttonDiv {
                                         padding-right: 8px;
                                         background-color: transparent;
@@ -107,6 +124,7 @@
                                         padding: 0px;
                                         border-radius: 0px;
                                         overflow: initial;
+
                                         .button {
                                             padding: 0px;
                                             width: 100%;
@@ -124,12 +142,14 @@
                                             background-color: inherit;
                                             color: inherit;
                                             border-color: inherit;
+
                                             .searchDiv {
                                                 display: inline-flex;
                                                 align-items: center;
                                                 justify-content: center;
                                                 min-width: 24px;
                                                 min-height: 24px;
+
                                                 .searchIcon {
                                                     width: 14px;
                                                     height: 14px;
@@ -138,10 +158,12 @@
                                             }
                                         }
                                     }
+
                                     .inputDiv {
                                         display: flex;
                                         flex: 1 1 0%;
                                         height: 100%;
+
                                         .input {
                                             padding-right: 40px;
                                             width: 100%;
@@ -159,6 +181,7 @@
                                 }
                             }
                         }
+
                         .timeMain {
                             grid-column: 1 / -1;
                             position: absolute;
@@ -169,6 +192,7 @@
                             background-color: rgb(255, 211, 0);
                             height: 40px;
                             border-radius: 8px;
+
                             .home {
                                 border-top-left-radius: 0px;
                                 border-bottom-left-radius: 0px;
@@ -182,6 +206,7 @@
                                 user-select: none;
                                 border: 0px;
                                 padding: 0px;
+
                                 .homeButton {
                                     justify-content: flex-start;
                                     padding: 8px;
@@ -199,6 +224,7 @@
                                     background-color: inherit;
                                     color: inherit;
                                     border-color: inherit;
+
                                     .homeFigure {
                                         border-right: 0px;
                                         display: flex;
@@ -213,6 +239,7 @@
                                         justify-content: center;
                                         overflow: hidden;
                                     }
+
                                     .homeLabel {
                                         line-height: 24px;
                                         max-width: 100px;
@@ -225,12 +252,14 @@
                                         font-weight: 600;
                                         color: rgb(82, 82, 82);
                                     }
+
                                     .arrowDiv {
                                         display: inline-flex;
                                         align-items: center;
                                         justify-content: center;
                                         min-width: 24px;
                                         min-height: 24px;
+
                                         .arrowIcon {
                                             fill: currentcolor;
                                             width: 12px;
@@ -239,6 +268,7 @@
                                     }
                                 }
                             }
+
                             .times {
                                 flex-direction: row;
                                 min-width: auto;
@@ -252,6 +282,7 @@
                                 font-size: 11px;
                                 line-height: 14px;
                                 color: #5d3ebc;
+
                                 .tvs {
                                     color: #5d3ebc;
                                     font-weight: 500;
@@ -262,6 +293,7 @@
                                     min-width: 0px;
                                     text-align: left;
                                 }
+
                                 .time {
                                     color: #5d3ebc;
                                     font-weight: 500;
@@ -272,9 +304,36 @@
                             }
                         }
                     }
+
+                    .showFavoriteSearch {
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+
+                        .general {
+                            padding-right: 24px !important;
+                            border: 0px !important;
+                            height: 40px !important;
+                            border-bottom-left-radius: 0px !important;
+                            border-bottom-right-radius: 0px !important;
+                        }
+                    }
+
+                    .search {
+                        border-bottom-left-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        position: absolute;
+                        top: 100%;
+                        left: 0px;
+                        border-top: 1px solid #f5f5f5;
+                        width: 100%;
+                        box-shadow: 0px 16px 46px rgba(93, 62, 188, 0.12);
+                        background-color: rgb(255, 255, 255);
+                        z-index: calc(15);
+                    }
                 }
             }
         }
+
         .spacer {
             flex: 1 1 0%;
             display: flex;
