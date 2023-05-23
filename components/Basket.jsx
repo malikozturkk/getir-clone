@@ -12,7 +12,6 @@ function Basket() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const { basketList, basketTotalAmount } = useSelector(state => state.basket)
-  console.log(basketList, 'basketList')
   return (
     <div className={styles.container}>
       <h5 className={styles.title}>{t('Basket.title')}</h5>

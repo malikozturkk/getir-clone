@@ -12,7 +12,6 @@ function Header() {
     const [showFavoriteSearch, setShowFavoriteSearch] = useState(false)
     const ref = useRef();
     useEffect(() => {
-        console.log('nealakaamk')
         const body = document.querySelector("body");
         const checkIfClickedOutside = (e) => {
             if (showFavoriteSearch && ref.current && !ref.current.contains(e.target)) {

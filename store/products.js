@@ -5,7 +5,7 @@ const cookieLanguage = {
 }
 
 const initialState = {
-    productsList: [],
+    productsList: typeof window !== "undefined" ? (window.localStorage.getItem("productList") ? JSON.parse(window.localStorage.getItem("productList")) : []) : [],
     selectCategory: cookieLanguage.language === 'tr' ? 'Yeni Ürünler' : 'New Products',
     selectSubCategory: cookieLanguage.language === 'tr' ? 'Yeni Ürünler' : 'New Products',
     selectSubCategories: []

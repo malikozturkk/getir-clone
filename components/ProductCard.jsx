@@ -2,13 +2,14 @@ import React from 'react'
 import styles from "../styles/layout/ProductList.module.scss"
 import ProductCounter from "./assets/svg/homepage/productCounter.svg"
 import Image from 'next/image'
+import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionAddBasket, actionDeleteBasket, actionRemoveBasket } from '../store/basket'
 import DeleteBasket from "./assets/svg/homepage/deleteBasket.svg"
 import DeleteProduct from "./assets/svg/homepage/deleteProduct.svg"
 
 function ProductCard({ subProduct, subCategory, index }) {
-    const { basketItemCount, basketList } = useSelector(state => state.basket)
+    const { basketList } = useSelector(state => state.basket)
     const dispatch = useDispatch()
     const addCart = () => {
         dispatch(actionAddBasket(subProduct));
@@ -30,9 +31,9 @@ function ProductCard({ subProduct, subCategory, index }) {
             <article className={styles.productMain} key={index}>
                 <div className={styles.imageMain}>
                     <div className={styles.imageLink} scroll={false}>
-                        <figure className={styles.imageFigure}>
-                            <Image className={styles.image} src={`/products/${subProduct.images}`} width={120} height={120} alt={subProduct.name} />
-                        </figure>
+                        <Link href={`/product/${subProduct?.id}`} className={styles.imageFigure}>
+                            <Image className={styles.image} src={`/products/${subProduct?.images}`} width={120} height={120} alt={subProduct?.name} />
+                        </Link>
                         <div className={styles.counterMain}>
                             {basketList.map((basket, index) => {
                                 return (
@@ -70,11 +71,11 @@ function ProductCard({ subProduct, subCategory, index }) {
                     </div>
                 </div>
                 <div className={styles.priceMain}>
-                    <span className={styles.price}>{subProduct.priceText}</span>
+                    <span className={styles.price}>{subProduct?.priceText}</span>
                 </div>
-                <span className={styles.titleMain}>{subProduct.name}</span>
+                <span className={styles.titleMain}>{subProduct?.name}</span>
                 <div className={styles.paragraphMain}>
-                    <p className={styles.paragraph}>{subProduct.shortDescription}</p>
+                    <p className={styles.paragraph}>{subProduct?.shortDescription}</p>
                 </div>
             </article>
         </>

@@ -1,0 +1,684 @@
+.productDetailsMain {
+    display: grid;
+    grid-template-columns: 1fr min(100%, 1232px) 1fr;
+    flex: 1 1 0%;
+
+    .productDetailsContainer {
+        display: grid;
+        gap: 24px;
+        grid-template:
+            "carousel-images header" minmax(54px, auto) "carousel-images basket" 48px
+            "carousel-images details" 1fr / 400px minmax(0px, 1fr);
+        padding: 32px;
+        background-color: #fff;
+        margin-bottom: 32px;
+        margin-top: 3px;
+        overflow: hidden;
+        grid-column: 2 / auto;
+
+        .productDetailsCol1 {
+            grid-area: header / header / header / header;
+            overflow: hidden;
+
+            .productNameMain {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .productName {
+                    display: flex;
+                    flex-direction: column;
+                    width: 70%;
+
+                    .name {
+                        color: #0e0e0e;
+                        font-weight: 500;
+                        margin: 0;
+                        font-size: 24px;
+                        line-height: 32px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .info {
+                        display: inline-block;
+                        margin-top: 4px;
+                        font-size: 14px;
+                        color: #697488;
+                        line-height: 18px;
+                    }
+                }
+
+                .favoriteMain {
+                    margin-top: 6px;
+                    flex-shrink: 0;
+                    user-select: none;
+                    display: inline-flex;
+                    color: rgb(93, 62, 188);
+                    background-color: transparent;
+                    border: 0px;
+                    padding: 0px;
+                    border-radius: 0px;
+                    overflow: initial;
+
+                    .favoriteMainButton {
+                        padding: 0px;
+                        width: 100%;
+                        height: 100%;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        line-height: 16px;
+                        outline: 0px;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-image: initial;
+                        cursor: pointer;
+                        background-color: inherit;
+                        color: inherit;
+                        border-color: inherit;
+
+                        .favoriteIcon {
+                            margin-right: 8px;
+                            flex-shrink: 0;
+
+                            .icon {
+                                position: absolute;
+                                transition: all 0.2s ease 0s;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                min-width: 24px;
+                                min-height: 24px;
+
+                                .favorite {
+                                    color: rgba(0, 0, 0, 0.2);
+                                    position: absolute;
+                                    transition: all 0.2s ease 0s;
+                                    fill: currentcolor;
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+
+                            .icons {
+                                transition: all 0.2s ease 0s;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                min-width: 24px;
+                                min-height: 24px;
+
+                                .favorite {
+                                    color: rgba(0, 0, 0, 0.04);
+                                    transition: all 0.2s ease 0s;
+                                    fill: currentcolor;
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+
+                        .favoriteTitle {
+                            color: #697488;
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+
+            .price {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+
+                .struckPriceText {
+                    text-decoration: line-through;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #697488;
+                }
+
+                .priceText {
+                    color: #5d3ebc;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        .productDetailsCol2 {
+            grid-area: carousel-images / carousel-images / carousel-images / carousel-images;
+            margin-left: auto;
+            margin-right: auto;
+
+            .mainImageContainer {
+                position: relative;
+
+                .mainImage {
+                    height: 400px;
+                    width: 375px;
+                    border: 2px solid #f3f0fe;
+                    border-radius: 8px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    display: flex;
+
+                    .leftSpacer {
+                        min-width: 40px;
+                    }
+
+                    .main {
+                        width: 100%;
+                        position: relative;
+                        display: block;
+                        box-sizing: border-box;
+                        user-select: none;
+                        touch-action: pan-y;
+                        height: 100%;
+
+                        .container {
+                            transform: translate3d(0px, 0px, 0px);
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            margin: 0px;
+                            padding: 0px;
+                            height: 100%;
+
+                            .image {
+                                transform: translate3d(0px, 0px, 0px);
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+
+                                .imageMain {
+                                    height: 100%;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    float: left;
+                                    min-height: 1px;
+
+                                    .imageContainer {
+                                        height: 100%;
+                                        width: 100%;
+
+                                        .item {
+                                            width: 100%;
+                                            display: inline-block;
+                                            height: 100%;
+
+                                            .figure {
+                                                width: 100%;
+                                                height: 100%;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                overflow: hidden;
+
+                                                .image {
+                                                    display: block;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: contain;
+                                                    border-radius: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .rightSpacer {
+                        min-width: 40px;
+                    }
+                }
+            }
+
+            .subImageContainer {
+                margin-top: 16px;
+                display: grid;
+                gap: 8px;
+                grid-template-rows: repeat(auto-fill, 60px);
+                grid-template-columns: repeat(auto-fill, 60px);
+
+                .subImage {
+                    border-width: 2px;
+                    border-style: solid;
+                    border-image: initial;
+                    padding: 2px;
+                    border-radius: 6px;
+                    border-color: #5d3ebc;
+                    user-select: none;
+                    display: inline-flex;
+                    color: rgb(93, 62, 188);
+                    background-color: transparent;
+
+                    .subImageButton {
+                        padding: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        line-height: 16px;
+                        outline: 0px;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-image: initial;
+                        cursor: pointer;
+                        background-color: inherit;
+                        color: inherit;
+                        border-color: inherit;
+
+                        .subImageFigure {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            overflow: hidden;
+
+                            .image {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                                border-radius: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .productDetailsCol3 {
+            grid-area: basket / basket / basket / basket;
+            display: flex;
+
+            .addToCart {
+                line-height: 19px;
+                height: 48px;
+                user-select: none;
+                display: inline-flex;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 2px solid rgb(93, 62, 188);
+                background-color: rgb(93, 62, 188);
+                color: rgb(255, 255, 255);
+                box-shadow: rgba(105, 116, 136, 0.15) 0px 2px 6px;
+
+                .addCart {
+                    padding-left: 48px;
+                    padding-right: 48px;
+                    line-height: 16px;
+                    white-space: nowrap;
+                    width: 100%;
+                    height: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    outline: 0px;
+                    border-width: 0px;
+                    border-style: initial;
+                    border-image: initial;
+                    cursor: pointer;
+                    background-color: inherit;
+                    color: inherit;
+                    border-color: inherit;
+                }
+            }
+
+            .basketTarget {
+                margin-right: 24px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px -1px, rgba(0, 0, 0, 0.1) 0px 1px 3px;
+                border: 0px;
+                height: 48px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                border-radius: 8px;
+                overflow: hidden;
+
+                .removeProduct,
+                .deleteProduct,
+                .addProduct {
+                    height: 100%;
+                    width: 58px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    background: rgb(255, 255, 255);
+                    border-radius: 0px;
+                    user-select: none;
+                    color: rgb(93, 62, 188);
+                    border: 0px;
+                    padding: 0px;
+                    overflow: initial;
+
+                    .removeButton,
+                    .deleteButton,
+                    .addButton {
+                        padding: 0px;
+                        width: 100%;
+                        height: 100%;
+                        display: inline-flex;
+                        justify-content: center;
+                        font-weight: 600;
+                        line-height: 16px;
+                        outline: 0px;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-image: initial;
+                        cursor: pointer;
+                        background-color: inherit;
+                        color: inherit;
+                        border-color: inherit;
+
+                        .removeButtonMain,
+                        .deleteButtonMain,
+                        .addButtonMain {
+                            pointer-events: none;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-width: 24px;
+                            min-height: 24px;
+
+                            svg {
+                                fill: currentColor;
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+
+                        .deleteButtonMain,
+                        .addButtonMain {
+                            svg {
+                                width: 10px;
+                                height: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .productCount {
+                    height: 100%;
+                    width: 58px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #5d3ebc;
+                    color: #fff;
+
+                    .basketItemCount {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .productDetailsCol4 {
+            grid-area: details / details / details / details;
+
+            .container {
+                .contents {
+                    display: flex;
+                    margin-bottom: 8px;
+
+                    .title {
+                        line-height: 22px;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #191919;
+                        flex-grow: 1;
+                        margin: 0px 10px 0px 0px;
+                    }
+
+                    .wrapperMain {
+                        display: flex;
+                        background-color: rgb(255, 255, 255);
+                        border: 1px solid rgb(231, 231, 231);
+                        border-radius: 8px;
+
+                        .wrapperLeft {
+                            border-right: 1px solid rgb(231, 231, 231);
+                            user-select: none;
+                            display: inline-flex;
+                            background-color: transparent;
+                            border: 0px;
+                            padding: 0px;
+                            border-radius: 0px;
+                            overflow: initial;
+                            color: rgb(162, 162, 162);
+                            cursor: not-allowed;
+
+                            .leftButton {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: 600;
+                                line-height: 16px;
+                                outline: 0px;
+                                border-width: 0px;
+                                border-style: initial;
+                                border-image: initial;
+                                background-color: inherit;
+                                color: inherit;
+                                border-color: inherit;
+                                cursor: not-allowed;
+
+                                .left {
+                                    min-width: 20px;
+                                    min-height: 20px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .icon {
+                                        fill: currentColor;
+                                        width: 8px;
+                                        height: 8px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .wrapperRight {
+                            user-select: none;
+                            display: inline-flex;
+                            color: rgb(93, 62, 188);
+                            background-color: transparent;
+                            border: 0px;
+                            padding: 0px;
+                            border-radius: 0px;
+                            overflow: initial;
+
+                            .rightButton {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: 600;
+                                outline: 0px;
+                                border-width: 0px;
+                                border-style: initial;
+                                border-image: initial;
+                                cursor: pointer;
+                                background-color: inherit;
+                                color: inherit;
+                                border-color: inherit;
+
+                                .right {
+                                    min-width: 20px;
+                                    min-height: 20px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .icon {
+                                        fill: currentColor;
+                                        width: 8px;
+                                        height: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .carousel {
+                    justify-content: flex-start;
+                    display: flex;
+                    height: 100%;
+
+                    .carouselContainer {
+                        width: 100%;
+                        position: relative;
+                        display: block;
+                        box-sizing: border-box;
+                        user-select: none;
+                        touch-action: pan-y;
+                        height: 100%;
+
+                        .carouselMain {
+                            transform: translate3d(0px, 0px, 0px);
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            margin: 0px;
+                            padding: 0px;
+                            height: 100%;
+
+                            .carouselList {
+                                transform: translate3d(0px, 0px, 0px);
+                                margin-left: 0px;
+                                align-items: stretch;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-right: auto;
+                                height: 100%;
+                                display: flex;
+
+                                .carouselItem {
+                                    outline: none;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    float: left;
+                                    height: 100%;
+                                    min-height: 1px;
+
+                                    .container {
+                                        .main {
+                                            width: 100%;
+                                            display: inline-block;
+
+                                            .article {
+                                                min-width: 172px;
+                                                max-width: 172px;
+                                                min-height: 224px;
+                                                max-height: 224px;
+                                                margin-right: 16px;
+                                                display: inline-flex;
+                                                flex-direction: column;
+                                                align-items: center;
+                                                background-color: #fff;
+                                                border: 2px solid #f3f0fe;
+                                                border-radius: 8px;
+                                                padding-top: 12px;
+                                                padding-bottom: 12px;
+
+                                                .imageMain {
+                                                    position: relative;
+                                                    margin-bottom: 8px;
+
+                                                    .main {
+                                                        width: 102px;
+                                                        height: 102px;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        overflow: hidden;
+                                                        margin: 0px;
+
+                                                        .image {
+                                                            display: block;
+                                                            border-radius: 8px;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            object-fit: cover;
+                                                            background: transparent;
+                                                            animation: 0s ease 0s 1 normal none running none;
+                                                        }
+                                                    }
+                                                }
+
+                                                .textMain {
+                                                    display: flex;
+
+                                                    .text {
+                                                        display: inline-flex;
+                                                        color: #5d3ebc;
+                                                        margin-bottom: 8px;
+                                                        line-height: 18px;
+                                                        font-weight: 600;
+                                                    }
+                                                }
+
+                                                .name {
+                                                    display: inline-flex;
+                                                    color: #191919;
+                                                    text-align: center;
+                                                    padding-right: 8px;
+                                                    padding-left: 8px;
+                                                    margin-bottom: 6px;
+                                                    line-height: 18px;
+                                                    font-weight: 500;
+                                                    font-size: 14px;
+                                                }
+
+                                                .descriptionMain {
+                                                    display: inline-flex;
+
+                                                    .description {
+                                                        color: #697488;
+                                                        line-height: 18px;
+                                                        margin: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

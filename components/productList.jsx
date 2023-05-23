@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react'
 import styles from "../styles/layout/ProductList.module.scss"
 import BreadCrumb from "./assets/svg/header/breadcrumb.svg"
 import { useSelector } from "react-redux"
+import { actionProductsList } from '../store/products'
+import { useDispatch } from "react-redux"
 import ProductCard from './ProductCard'
 
 function ProductList({ id }) {
   const [products, setProducts] = useState([])
+  const dispatch = useDispatch()
   const { selectCategory, selectSubCategory, selectSubCategories } = useSelector(state => state.products)
   useEffect(() => {
     fetch('http://localhost:3001/products')
       .then(data => data.json())
       .then(data => {
         setProducts(data)
+        dispatch(actionProductsList(data))
+        localStorage.setItem("productList", JSON.stringify(data))
       });
   }, [])
   return (

@@ -41,8 +41,9 @@ const basket = createSlice({
         actionRemoveBasket: (state, action) => {
             let price = Math.round(action.payload.price)
             state.basketTotalAmount -= price
-            localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             state.basketList = state.basketList.filter((basket) => basket.id !== action.payload.id)
+            localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
+            localStorage.setItem("basketList", JSON.stringify(state.basketList))
         },
         actionBasketItemCount: (state, action) => {
             state.basketItemCount = action.payload
