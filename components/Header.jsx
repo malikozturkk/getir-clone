@@ -7,9 +7,11 @@ import Home from "./assets/svg/header/home.svg"
 import ArrowRight from "./assets/svg/header/arrowRight.svg"
 import { useTranslation } from "react-i18next"
 import FavoriteSearch from './FavoriteSearch'
+import SearchResult from './SearchResult'
 
 function Header() {
     const [showFavoriteSearch, setShowFavoriteSearch] = useState(false)
+    const [inputValue, setInputValue] = useState('')
     const ref = useRef();
     useEffect(() => {
         const body = document.querySelector("body");
@@ -57,7 +59,7 @@ function Header() {
                                                 </button>
                                             </div>
                                             <div className={styles.inputDiv}>
-                                                <input onClick={() => setShowFavoriteSearch(true)} className={styles.input} aria-label='Search Bar' placeholder={t('SearchForm.inputPlaceholder')} tabIndex="0" value="" />
+                                                <input onClick={() => setShowFavoriteSearch(true)} onChange={(e) => setInputValue(e.target.value)} value={inputValue} className={styles.input} aria-label='Search Bar' placeholder={t('SearchForm.inputPlaceholder')} tabIndex="0" />
                                             </div>
                                         </div>
                                     </div>
@@ -81,9 +83,14 @@ function Header() {
                                     </span>
                                 </article>
                             </div>
-                            {showFavoriteSearch &&
+                            {showFavoriteSearch && inputValue.length <= 1 &&
                                 <div className={styles.search}>
                                     <FavoriteSearch />
+                                </div>
+                            }
+                            {showFavoriteSearch && inputValue.length > 1 &&
+                                <div className={styles.search}>
+                                    <SearchResult inputValue={inputValue} setInputValue={setInputValue} setShowFavoriteSearch={setShowFavoriteSearch} />
                                 </div>
                             }
                         </form>

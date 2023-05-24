@@ -17,6 +17,7 @@ const basket = createSlice({
             const itemIndex = state.basketList.findIndex((item) => item.id === action.payload.id)
             if (itemIndex >= 0) {
                 state.basketList[itemIndex].basketItemCount += 1
+                state.basketItemCount += 1
             }
             else {
                 const tempProduct = { ...action.payload, basketItemCount: 1 }
@@ -31,6 +32,7 @@ const basket = createSlice({
             const itemIndex = state.basketList.findIndex((item) => item.id === action.payload.id)
             if (itemIndex >= 0) {
                 state.basketList[itemIndex].basketItemCount -= 1
+                state.basketItemCount -= 1
             }
             else {
                 const tempProduct = { ...action.payload, basketItemCount: 1 }
@@ -44,12 +46,9 @@ const basket = createSlice({
             state.basketList = state.basketList.filter((basket) => basket.id !== action.payload.id)
             localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             localStorage.setItem("basketList", JSON.stringify(state.basketList))
-        },
-        actionBasketItemCount: (state, action) => {
-            state.basketItemCount = action.payload
         }
     }
 })
 
-export const { actionAddBasket, actionBasketItemCount, actionDeleteBasket, actionRemoveBasket } = basket.actions
+export const { actionAddBasket, actionDeleteBasket, actionRemoveBasket } = basket.actions
 export default basket.reducer

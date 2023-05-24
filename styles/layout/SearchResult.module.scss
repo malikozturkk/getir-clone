@@ -1,0 +1,184 @@
+.resultMain {
+    max-height: 500px;
+    overflow-y: auto;
+
+    .resultItem {
+        display: flex;
+        align-items: center;
+        min-height: 52px;
+        padding-right: 16px;
+
+        .searchedProduct {
+            flex: 1 1 0%;
+            overflow: hidden;
+            user-select: none;
+            display: inline-flex;
+            color: rgb(93, 62, 188);
+            background-color: transparent;
+            border: 0px;
+            padding: 0px;
+            border-radius: 0px;
+
+            .productButton {
+                padding: 10px 16px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                font-weight: 600;
+                line-height: 16px;
+                outline: 0px;
+                border-width: 0px;
+                border-style: initial;
+                border-image: initial;
+                cursor: pointer;
+                background-color: inherit;
+                color: inherit;
+                border-color: inherit;
+
+                .searchedMain {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    height: 100%;
+
+                    .searchedFigure {
+                        flex-shrink: 0;
+                        width: 32px;
+                        height: 32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        border: 1px solid rgba(25, 25, 25, 0.1);
+                        border-radius: 3px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            background: transparent;
+                            animation: 0s ease 0s 1 normal none running none;
+                        }
+                    }
+
+                    .searchedInfo {
+                        margin-left: 16px;
+                        display: flex;
+                        align-items: center;
+                        flex: 1 1 0%;
+                        min-width: 0px;
+
+                        .productTitle {
+                            display: inline-block;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            color: #697488;
+                            font-size: 14px;
+                            line-height: 24px;
+                            font-weight: 400;
+
+                            .name {
+                                line-height: 24px;
+                                white-space: pre;
+                                color: rgb(14, 14, 14);
+                            }
+                        }
+
+                        .productInfo {
+                            margin-left: 8px;
+                            margin-right: 8px;
+                            font-size: 14px;
+                            color: #697488;
+                            font-weight: 400;
+                            line-height: 24px;
+                            flex-shrink: 0;
+                        }
+
+                        .productPrice {
+                            flex: 1 0 0%;
+                            font-size: 14px;
+                            text-align: right;
+                            color: #5d3ebc;
+                            font-weight: 600;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .counterMain {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+            .counterContainer {
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                background: rgb(255, 255, 255);
+                width: 32px;
+                height: 32px;
+                user-select: none;
+                color: rgb(93, 62, 188);
+                border: 0px;
+                padding: 0px;
+
+                .counterButton {
+                    width: 100%;
+                    height: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 0;
+                    justify-content: center;
+                    font-weight: 600;
+                    line-height: 16px;
+                    outline: 0px;
+                    border-width: 0px;
+                    border-style: initial;
+                    border-image: initial;
+                    cursor: pointer;
+                    background-color: inherit;
+                    color: inherit;
+                    border-color: inherit;
+
+                    .counterIcon {
+                        pointer-events: none;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-width: 24px;
+                        min-height: 24px;
+
+                        svg {
+                            fill: currentcolor;
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            background-color: #f3f0fe;
+        }
+    }
+
+    .resultItem:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}

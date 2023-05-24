@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../styles/layout/FavoriteSearch.module.scss"
+import { getProduct } from '../utils/getProduct'
 
 const FavoriteSearch = () => {
     const favoriteProduct =
         [
             {
                 "id": 1,
-                "name": "dondurma"
+                "name": "kuzeyden"
             },
             {
                 "id": 2,

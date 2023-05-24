@@ -12,7 +12,7 @@ import DeleteBasket from "./assets/svg/homepage/deleteBasket.svg"
 import DeleteProduct from "./assets/svg/homepage/deleteProduct.svg"
 function ProductDetails({ id, product }) {
     const dispatch = useDispatch()
-    const { basketList } = useSelector(state => state.basket)
+    const { basketList, basketItemCount } = useSelector(state => state.basket)
     return (
         <>
             {id == product.id &&
@@ -77,7 +77,6 @@ function ProductDetails({ id, product }) {
                         </div>
                         <div className={styles.productDetailsCol3}>
                             {basketList.map((basket, index) => {
-                                console.log(basket, 'basket')
                                 return (
                                     basket.id === product.id && basket.basketItemCount > 0 &&
                                     <div className={styles.basketTarget}>
