@@ -20,7 +20,7 @@ function SearchResult({ inputValue, setShowFavoriteSearch, setInputValue }) {
             {products.filter(item => {
                 const searchTerm = inputValue.toLowerCase()
                 const fullName = item.name.toLowerCase()
-                return searchTerm && fullName.startsWith(searchTerm)
+                return searchTerm && fullName.indexOf(searchTerm) !== -1
             })
                 .map((product, index) => (
                     <div className={styles.resultItem} key={index}>
