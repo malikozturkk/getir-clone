@@ -46,7 +46,7 @@ function Header() {
                 </div>
                 <div className={styles.mainSearchForm} ref={ref}>
                     <article className={styles.mainSearchArticle}>
-                        <form className={styles.form}>
+                        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
                             <div className={`${styles.container} ${showFavoriteSearch ? styles.showFavoriteSearch : ''}`}>
                                 <div className={styles.searchFormMain}>
                                     <div className={styles.main}>

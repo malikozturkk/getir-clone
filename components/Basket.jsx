@@ -56,7 +56,7 @@ function Basket() {
               </div>
               <div className={styles.goToCartMain}>
                 <button className={styles.gotToCart}>Sepete git</button>
-                <div className={styles.totalPrice}>₺{basketTotalAmount}</div>
+                <div className={styles.totalPrice}>₺{parseFloat(basketTotalAmount).toFixed(2)}</div>
               </div>
             </article>
           </div>

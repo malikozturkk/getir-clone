@@ -702,75 +702,261 @@
             "subCategories": [
                 {
                     "name": "Makarna",
-                    "id": 0
+                    "id": 0,
+                    "products": [
+                        {
+                            "id": 63,
+                            "name": "Mutlu Burgu Makarna",
+                            "shortDescription": "500 g",
+                            "priceText": "₺12,99",
+                            "price": 12.99,
+                            "images": "63.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Pirinç",
-                    "id": 1
+                    "id": 1,
+                    "products": [
+                        {
+                            "id": 64,
+                            "name": "Duru Baldo Pirinç",
+                            "shortDescription": "2 x 1kg",
+                            "priceText": "₺109,90",
+                            "price": 109.90,
+                            "struckPriceText": "₺131,80",
+                            "struckPrice": 131.80,
+                            "images": "64.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Bulgur",
-                    "id": 2
+                    "id": 2,
+                    "products": [
+                        {
+                            "id": 65,
+                            "name": "Tat Pilavlık Bulgur",
+                            "shortDescription": "1 kg",
+                            "priceText": "₺19,90",
+                            "price": 19.90,
+                            "images": "65.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Bakliyat",
-                    "id": 3
+                    "id": 3,
+                    "products": [
+                        {
+                            "id": 66,
+                            "name": "Yayla Nohut",
+                            "shortDescription": "2 x 1 kg",
+                            "priceText": "₺112,90",
+                            "price": 112.90,
+                            "struckPriceText": "₺126,50",
+                            "struckPrice": 126.50,
+                            "images": "66.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Salça",
-                    "id": 4
+                    "id": 4,
+                    "products": [
+                        {
+                            "id": 67,
+                            "name": "Tat Domates Salçası",
+                            "shortDescription": "830 g",
+                            "priceText": "₺39,99",
+                            "price": 39.99,
+                            "struckPriceText": "₺48,99",
+                            "struckPrice": 48.99,
+                            "images": "67.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Sos",
-                    "id": 5
+                    "id": 5,
+                    "products": [
+                        {
+                            "id": 68,
+                            "name": "HP Klasik Barbekü Sos",
+                            "shortDescription": "465 g",
+                            "priceText": "₺60,50",
+                            "price": 60.50,
+                            "images": "68.png"
+                        }
+                    ]
                 },
                 {
                     "name": "Konserve",
-                    "id": 6
+                    "id": 6,
+                    "products": [
+                        {
+                            "id": 69,
+                            "name": "Dardanel Zeytinyağlı Ton",
+                            "shortDescription": "3 x 75 g",
+                            "priceText": "₺104,90",
+                            "price": 104.90,
+                            "images": "69.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Un",
-                    "id": 7
+                    "id": 7,
+                    "products": [
+                        {
+                            "id": 70,
+                            "name": "Eriş Un",
+                            "shortDescription": "1 kg",
+                            "priceText": "₺18,50",
+                            "price": 18.50,
+                            "images": "70.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Sıvı Yağ",
-                    "id": 8
+                    "id": 8,
+                    "products": [
+                        {
+                            "id": 71,
+                            "name": "Yudum Ayçiçek Yağı",
+                            "shortDescription": "3 L",
+                            "priceText": "₺131,90",
+                            "price": 131.90,
+                            "images": "71.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Zeytinyağı",
-                    "id": 9
+                    "id": 9,
+                    "products": [
+                        {
+                            "id": 72,
+                            "name": "Komili Naturel Sızma Zeytinyağı",
+                            "shortDescription": "1 L",
+                            "priceText": "₺60,50",
+                            "price": 60.50,
+                            "images": "72.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Tereyağ & Margarin",
-                    "id": 10
+                    "id": 10,
+                    "products": [
+                        {
+                            "id": 73,
+                            "name": "Sütaş Yayık Tereyağı",
+                            "shortDescription": "250 g",
+                            "priceText": "₺79,50",
+                            "price": 79.50,
+                            "images": "73.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Şeker",
-                    "id": 11
+                    "id": 11,
+                    "products": [
+                        {
+                            "id": 74,
+                            "name": "Nar Toz Şeker",
+                            "shortDescription": "1 kg",
+                            "priceText": "₺28,50",
+                            "price": 28.50,
+                            "images": "74.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Sirke & Salata Sosu",
-                    "id": 12
+                    "id": 12,
+                    "products": [
+                        {
+                            "id": 75,
+                            "name": "Fersan Üzüm Sirkesi",
+                            "shortDescription": "1 L",
+                            "priceText": "₺32,90",
+                            "price": 32.90,
+                            "images": "75.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Baharat",
-                    "id": 13
+                    "id": 13,
+                    "products": [
+                        {
+                            "id": 76,
+                            "name": "Billur İyotlu Sofra Tuzu",
+                            "shortDescription": "1500 g",
+                            "priceText": "₺29,50",
+                            "price": 29.50,
+                            "images": "76.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Çorba",
-                    "id": 14
+                    "id": 14,
+                    "products": [
+                        {
+                            "id": 77,
+                            "name": "Knorr Çabuk Çorba Domates",
+                            "shortDescription": "22 g",
+                            "priceText": "₺6,99",
+                            "price": 6.99,
+                            "images": "77.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Tatlı",
-                    "id": 15
+                    "id": 15,
+                    "products": [
+                        {
+                            "id": 78,
+                            "name": "Dr. Oetker Çikolatalı Puding",
+                            "shortDescription": "111 g",
+                            "priceText": "₺15,99",
+                            "price": 15.99,
+                            "images": "78.jpg"
+                        }
+                    ]
                 },
                 {
                     "name": "Pasta Malzemeleri",
-                    "id": 16
+                    "id": 16,
+                    "products": [
+                        {
+                            "id": 79,
+                            "name": "Dr. Oetker Kabartma Tozu",
+                            "shortDescription": "15 x 10 g",
+                            "priceText": "₺22,99",
+                            "price": 22.99,
+                            "images": "79.jpeg"
+                        }
+                    ]
                 },
                 {
                     "name": "Krema",
-                    "id": 17
+                    "id": 17,
+                    "products": [
+                        {
+                            "id": 80,
+                            "name": "İçim Şef %18 Yağlı Krema",
+                            "shortDescription": "200 ml",
+                            "priceText": "₺16,99",
+                            "price": 16.99,
+                            "images": "80.jpeg"
+                        }
+                    ]
                 }
             ]
         },

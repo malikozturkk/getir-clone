@@ -11,8 +11,7 @@ const basket = createSlice({
     initialState,
     reducers: {
         actionAddBasket: (state, action) => {
-            let price = Math.round(action.payload.price)
-            state.basketTotalAmount += price
+            state.basketTotalAmount += action.payload.price
             localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             const itemIndex = state.basketList.findIndex((item) => item.id === action.payload.id)
             if (itemIndex >= 0) {
@@ -26,8 +25,7 @@ const basket = createSlice({
             localStorage.setItem("basketList", JSON.stringify(state.basketList))
         },
         actionDeleteBasket: (state, action) => {
-            let price = Math.round(action.payload.price)
-            state.basketTotalAmount -= price
+            state.basketTotalAmount -= action.payload.price
             localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             const itemIndex = state.basketList.findIndex((item) => item.id === action.payload.id)
             if (itemIndex >= 0) {
@@ -41,8 +39,7 @@ const basket = createSlice({
             localStorage.setItem("basketList", JSON.stringify(state.basketList))
         },
         actionRemoveBasket: (state, action) => {
-            let price = Math.round(action.payload.price)
-            state.basketTotalAmount -= price
+            state.basketTotalAmount -= action.payload.price
             state.basketList = state.basketList.filter((basket) => basket.id !== action.payload.id)
             localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             localStorage.setItem("basketList", JSON.stringify(state.basketList))

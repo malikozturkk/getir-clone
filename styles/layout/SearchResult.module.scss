@@ -131,7 +131,6 @@
                 background: rgb(255, 255, 255);
                 width: 32px;
                 height: 32px;
-                user-select: none;
                 color: rgb(93, 62, 188);
                 border: 0px;
                 padding: 0px;
@@ -147,6 +146,7 @@
                     line-height: 16px;
                     outline: 0px;
                     border-width: 0px;
+                    user-select: none;
                     border-style: initial;
                     border-image: initial;
                     cursor: pointer;
