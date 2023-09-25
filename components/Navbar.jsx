@@ -39,139 +39,139 @@ function Navbar() {
             transform: 'rotate(-180deg)'
         }
     }
-  return (
-    <>
-        <nav className={styles.nav}>
-            <div className={styles.navMain}>
-                <div className={styles.navLeft}>
-                    <div className={styles.firstItem}>
-                        <div className={styles.itemList}>
-                            <Link href='/' className={styles.itemUrl} scroll={false}>
-                                <figure className={styles.figure1}>
-                                    <Getir className={styles.logo} viewBox="0 0 53 24" />
-                                </figure>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className={styles.secondItem}>
-                        <div className={styles.itemList}>
-                            <Link href='/getiryemek' className={styles.itemUrl} scroll={false}>
-                                <figure className={styles.figure2}>
-                                    {initialState.language === 'tr' 
-                                    ?
-                                        <GetirYemek className={styles.logo} viewBox="0 0 131 24" />
-                                    :
-                                        <GetirFood className={styles.logo} viewBox="0 0 106 24" />
-                                    }
-                                </figure>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className={styles.thirdItem}>
-                        <div className={styles.itemList}>
-                            <Link href='/getirbuyuk' className={styles.itemUrl} scroll={false}>
-                                <figure className={styles.figure3}>
-                                    {initialState.language === 'tr' 
-                                    ?
-                                        <GetirBuyuk className={styles.logo} viewBox="0 0 122 24" />
-                                    :
-                                        <GetirMore className={styles.logo} viewBox="0 0 75 16" />
-                                    }
-                                </figure>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className={styles.fourthItem}>
-                        <div className={styles.itemList}>
-                            <Link href='/getirsu' className={styles.itemUrl} scroll={false}>
-                                <figure className={styles.figure4}>
-                                    {initialState.language === 'tr' 
-                                    ?
-                                        <GetirSu className={styles.logo} viewBox="0 0 210 64" />
-                                    :
-                                        <GetirWater className={styles.logo} viewBox="0 0 316 64" />
-                                    }
-                                </figure>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.navRight}>
-                    <div className={styles.firstItem} onClick={() => dispatch(actionLanguageModal(true))}>
-                        <button className={styles.changeLanguageButton}>
-                            <div className={styles.changeLanguageDiv}>
-                                <Language className={styles.changeLanguageIcon} />
-                            </div>
-                            <span className={styles.changeLanguageText}>{selectLang}</span>
-                        </button>
-                    </div>
-                    {user &&
-                        <>
-                            <div className={styles.secondItem}>
-                                <Link href='/kampanyalar' className={styles.itemUrl} scroll={false}>
-                                    <div className={styles.campaignsDiv}>
-                                        <Campaigns className={styles.campaignsIcon} />
-                                    </div>
-                                    {t('Navbar.campaign')}
+    return (
+        <>
+            <nav className={styles.nav}>
+                <div className={styles.navMain}>
+                    <div className={styles.navLeft}>
+                        <div className={styles.firstItem}>
+                            <div className={styles.itemList}>
+                                <Link href='/' className={styles.itemUrl} scroll={false}>
+                                    <figure className={styles.figure1}>
+                                        <Getir className={styles.logo} viewBox="0 0 53 24" />
+                                    </figure>
                                 </Link>
                             </div>
-                            <button className={styles.thirdItem} onClick={() => dispatch(actionProfileModal(true))}>
-                                <div className={styles.profile}>
-                                    <span className={styles.profileSpan}>
-                                        <div className={styles.profileDiv}>
-                                            <Profile className={styles.profileIcon} />
-                                        </div>
-                                        {t('Navbar.profile')}
-                                    </span>
-                                    <div className={styles.profileDropdown} style={arrowStyle}>
-                                        <div className={styles.profileDropdownIcon}>
-                                            <ArrowDown className={styles.arrowDownIcon} />
-                                        </div>
-                                    </div>
+                        </div>
+                        <div className={styles.secondItem}>
+                            <div className={styles.itemList}>
+                                <Link href='/getiryemek' className={styles.itemUrl} scroll={false}>
+                                    <figure className={styles.figure2}>
+                                        {initialState.language === 'tr'
+                                            ?
+                                            <GetirYemek className={styles.logo} viewBox="0 0 131 24" />
+                                            :
+                                            <GetirFood className={styles.logo} viewBox="0 0 106 24" />
+                                        }
+                                    </figure>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={styles.thirdItem}>
+                            <div className={styles.itemList}>
+                                <Link href='/getirbuyuk' className={styles.itemUrl} scroll={false}>
+                                    <figure className={styles.figure3}>
+                                        {initialState.language === 'tr'
+                                            ?
+                                            <GetirBuyuk className={styles.logo} viewBox="0 0 122 24" />
+                                            :
+                                            <GetirMore className={styles.logo} viewBox="0 0 75 16" />
+                                        }
+                                    </figure>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={styles.fourthItem}>
+                            <div className={styles.itemList}>
+                                <Link href='/getirsu' className={styles.itemUrl} scroll={false}>
+                                    <figure className={styles.figure4}>
+                                        {initialState.language === 'tr'
+                                            ?
+                                            <GetirSu className={styles.logo} viewBox="0 0 210 64" />
+                                            :
+                                            <GetirWater className={styles.logo} viewBox="0 0 316 64" />
+                                        }
+                                    </figure>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.navRight}>
+                        <div className={styles.firstItem} onClick={() => dispatch(actionLanguageModal(true))}>
+                            <button className={styles.changeLanguageButton}>
+                                <div className={styles.changeLanguageDiv}>
+                                    <Language className={styles.changeLanguageIcon} />
                                 </div>
+                                <span className={styles.changeLanguageText}>{selectLang}</span>
                             </button>
-                        </>
+                        </div>
+                        {user &&
+                            <>
+                                <div className={styles.secondItem}>
+                                    <Link href='/kampanyalar' className={styles.itemUrl} scroll={false}>
+                                        <div className={styles.campaignsDiv}>
+                                            <Campaigns className={styles.campaignsIcon} />
+                                        </div>
+                                        {t('Navbar.campaign')}
+                                    </Link>
+                                </div>
+                                <button className={styles.thirdItem} onClick={() => dispatch(actionProfileModal(true))}>
+                                    <div className={styles.profile}>
+                                        <span className={styles.profileSpan}>
+                                            <div className={styles.profileDiv}>
+                                                <Profile className={styles.profileIcon} />
+                                            </div>
+                                            {t('Navbar.profile')}
+                                        </span>
+                                        <div className={styles.profileDropdown} style={arrowStyle}>
+                                            <div className={styles.profileDropdownIcon}>
+                                                <ArrowDown className={styles.arrowDownIcon} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </>
+                        }
+                        {!user &&
+                            <>
+                                <div className={styles.loginItem}>
+                                    <button type="button" className={styles.loginButton} onClick={() => dispatch(actionLoginModal(true))}>
+                                        <div className={styles.loginIcon}>
+                                            <Login className={styles.icon} />
+                                        </div>
+                                        {t('Navbar.login')}
+                                    </button>
+                                </div>
+                                <div className={styles.signUpItem}>
+                                    <button type="button" className={styles.signUpButton} onClick={() => dispatch(actionSignupModal(true))}>
+                                        <div className={styles.signUpIcon}>
+                                            <SignUp className={styles.icon} />
+                                        </div>
+                                        {t('Navbar.signup')}
+                                    </button>
+                                </div>
+                            </>
+                        }
+                    </div>
+
+                    {loginModal &&
+                        <LoginModal />
                     }
-                    {!user &&
-                        <>
-                            <div className={styles.loginItem}>
-                                <button type="button" className={styles.loginButton} onClick={() => dispatch(actionLoginModal(true))}>
-                                    <div className={styles.loginIcon}>
-                                        <Login className={styles.icon} />
-                                    </div>
-                                    {t('Navbar.login')}
-                                </button>
-                            </div>
-                            <div className={styles.signUpItem}>
-                                <button type="button" className={styles.signUpButton} onClick={() => dispatch(actionSignupModal(true))}>
-                                    <div className={styles.signUpIcon}>
-                                        <SignUp className={styles.icon} />
-                                    </div>
-                                    {t('Navbar.signup')}
-                                </button>
-                            </div>
-                        </>
+
+                    {signupModal &&
+                        <SignUpModal />
+                    }
+
+                    {profileModal &&
+                        <ProfileComponent />
+                    }
+                    {languageModal &&
+                        <LanguageModal />
                     }
                 </div>
-
-                {loginModal &&
-                    <LoginModal />
-                }
-
-                {signupModal &&
-                    <SignUpModal />
-                }
-
-                {profileModal && 
-                    <ProfileComponent />
-                }
-                {languageModal &&
-                    <LanguageModal />
-                }
-            </div>
-        </nav>
-    </>
-  )
+            </nav>
+        </>
+    )
 }
 
 export default Navbar

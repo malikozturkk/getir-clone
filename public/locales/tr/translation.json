@@ -3,6 +3,24 @@
         "title": "Dil Değiştir",
         "button": "Güncelle"
     },
+    "AddressModal": {
+        "title": "Adreslerim",
+        "button": "Adresi Onayla",
+        "addAddress": "Başka bir adreste misiniz?",
+        "addAddressButton": "Adres Ekle"
+    },
+    "AddAddressModal": {
+        "title": "Teslimat Adresi Ekleyin",
+        "button": "Kaydet",
+        "form": {
+            "title": "Başlık(Ev, işyeri)",
+            "address": "Adres",
+            "building": "Bina",
+            "floor": "Kat",
+            "apt": "Daire",
+            "addressDirections": "Adres Tarifi"
+        }
+    },
     "Navbar": {
         "login": "Giriş Yap",
         "signup": "Kayıt Ol",

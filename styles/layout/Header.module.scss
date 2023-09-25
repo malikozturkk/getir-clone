@@ -304,6 +304,92 @@
                                 }
                             }
                         }
+
+                        .newAddressMain {
+                            position: absolute;
+                            right: 0px;
+                            box-shadow: none;
+                            z-index: 1;
+                            display: flex;
+                            height: 40px;
+                            border-radius: 8px;
+
+                            .newAddressContainer {
+                                border-radius: 4px;
+                                display: flex;
+                                align-items: center;
+                                flex: 1 1 0%;
+                                background-color: rgb(255, 255, 255);
+                                overflow: hidden;
+                                user-select: none;
+                                color: rgb(93, 62, 188);
+                                border: 0px;
+                                padding: 0px;
+
+                                .buttonMain {
+                                    justify-content: flex-start;
+                                    padding: 2px 5px;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    font-weight: 600;
+                                    line-height: 16px;
+                                    outline: 0px;
+                                    border-width: 0px;
+                                    border-style: initial;
+                                    border-image: initial;
+                                    cursor: pointer;
+                                    background-color: inherit;
+                                    color: inherit;
+                                    border-color: inherit;
+
+                                    .buttonContainer {
+                                        user-select: none;
+                                        display: inline-flex;
+                                        overflow: hidden;
+                                        border: 2px solid transparent;
+                                        background-color: rgb(243, 240, 254);
+                                        color: rgb(93, 62, 188);
+                                        box-shadow: none;
+                                        border-radius: 4px;
+
+                                        .button {
+                                            justify-content: flex-start;
+                                            padding: 2px 5px;
+                                            width: 100%;
+                                            height: 100%;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            font-weight: 600;
+                                            line-height: 16px;
+                                            outline: 0px;
+                                            border-width: 0px;
+                                            border-style: initial;
+                                            border-image: initial;
+                                            cursor: pointer;
+                                            background-color: inherit;
+                                            color: inherit;
+                                            border-color: inherit;
+
+                                            .buttonDiv {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                min-width: 24px;
+                                                min-height: 24px;
+
+                                                svg {
+                                                    fill: currentcolor;
+                                                    width: 10px;
+                                                    height: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     .showFavoriteSearch {

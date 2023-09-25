@@ -3,6 +3,24 @@
         "title": "Change Language",
         "button": "Update"
     },
+    "AddressModal": {
+        "title": "My Addresses",
+        "button": "Confirm Address",
+        "addAddress": "Are you in another address?",
+        "addAddressButton": "Add Address"
+    },
+    "AddAddressModal": {
+        "title": "Add Delivery Address",
+        "button": "Save",
+        "form": {
+            "title": "Title(Home, work)",
+            "address": "Address",
+            "building": "Building",
+            "floor": "Floor",
+            "apt": "Apt. No",
+            "addressDirections": "Address Directions"
+        }
+    },
     "Navbar": {
         "login": "Login",
         "signup": "Sign Up",

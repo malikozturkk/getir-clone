@@ -8,10 +8,17 @@ import ArrowRight from "./assets/svg/header/arrowRight.svg"
 import { useTranslation } from "react-i18next"
 import FavoriteSearch from './FavoriteSearch'
 import SearchResult from './SearchResult'
+import { actionAddressModal, actionAddAddressModal } from '../store/address'
+import { useDispatch, useSelector } from 'react-redux'
+import AddressModal from './AddressModal'
+import AddAddressModal from './AddAddressModal'
 
 function Header() {
+    const dispatch = useDispatch()
     const [showFavoriteSearch, setShowFavoriteSearch] = useState(false)
     const [inputValue, setInputValue] = useState('')
+    const { user } = useSelector(state => state.auth)
+    const { addressModal, addAddressModal, addressList } = useSelector(state => state.address)
     const ref = useRef();
     useEffect(() => {
         const body = document.querySelector("body");
@@ -64,24 +71,47 @@ function Header() {
                                         </div>
                                     </div>
                                 </div>
-                                <article className={styles.timeMain}>
-                                    <div className={styles.home}>
-                                        <button className={styles.homeButton}>
-                                            <figure className={styles.homeFigure}>
-                                                <Home className={styles.homeIcon} />
-                                            </figure>
-                                            <span className={styles.homeLabel}>{t('SearchForm.home')}</span>
-                                            <div className={styles.arrowDiv}>
-                                                <ArrowRight className={styles.arrowIcon} />
-                                            </div>
-                                        </button>
-                                    </div>
-                                    <span className={styles.times}>
-                                        <span className={styles.tvs}>{t('SearchForm.eta')}</span>
-                                        &nbsp;
-                                        <time className={styles.time}>11 {t('SearchForm.minute')}</time>
-                                    </span>
-                                </article>
+                                {JSON.parse(addressList) && user ?
+                                    <article className={styles.timeMain}>
+                                        <div className={styles.home} onClick={() => localStorage.getItem("addressList") ? dispatch(actionAddressModal(true)) : dispatch(actionAddAddressModal(true))}>
+                                            <button className={styles.homeButton}>
+                                                <figure className={styles.homeFigure}>
+                                                    <Home className={styles.homeIcon} />
+                                                </figure>
+                                                <span className={styles.homeLabel}>
+                                                    {JSON.parse(addressList)?.map((item, index) => (
+                                                        <div key={index}>
+                                                            {item.title}
+                                                        </div>
+                                                    ))}
+                                                </span>
+                                                <div className={styles.arrowDiv}>
+                                                    <ArrowRight className={styles.arrowIcon} />
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <span className={styles.times}>
+                                            <span className={styles.tvs}>{t('SearchForm.eta')}</span>
+                                            &nbsp;
+                                            <time className={styles.time}>11 {t('SearchForm.minute')}</time>
+                                        </span>
+                                    </article>
+                                    : user &&
+                                    <article className={styles.newAddressMain}>
+                                        <div className={styles.newAddressContainer}>
+                                            <button type="button" className={styles.buttonMain} onClick={() => dispatch(actionAddAddressModal(true))}>
+                                                <div className={styles.buttonContainer}>
+                                                    <button type="button" className={styles.button}>
+                                                        <div className={styles.buttonDiv}>
+                                                            <svg data-testid="icon" name="plus" size="10" color="#5D38C0" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="style__Icon-sc-__sc-hqksj3-1 hORzfG"><path d="M16 32c1.1 0 2-0.9 2-2v-12h12c1.1 0 2-0.9 2-2s-0.9-2-2-2h-12v-12c0-1.1-0.9-2-2-2s-2 0.9-2 2v12h-12c-1.1 0-2 0.9-2 2s0.9 2 2 2h12v12c0 1.1 0.9 2 2 2z" class="style__Path-sc-__sc-hqksj3-2 lcjQMU"></path></svg>
+                                                        </div>
+                                                        Yeni Adres Ekle
+                                                    </button>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </article>
+                                }
                             </div>
                             {showFavoriteSearch && inputValue.length <= 1 &&
                                 <div className={styles.search}>
@@ -92,6 +122,12 @@ function Header() {
                                 <div className={styles.search}>
                                     <SearchResult inputValue={inputValue} setInputValue={setInputValue} setShowFavoriteSearch={setShowFavoriteSearch} />
                                 </div>
+                            }
+                            {addressModal &&
+                                <AddressModal />
+                            }
+                            {addAddressModal &&
+                                <AddAddressModal />
                             }
                         </form>
                     </article>

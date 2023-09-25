@@ -5,14 +5,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionAddBasket, actionDeleteBasket, actionRemoveBasket } from '../store/basket'
+import { actionLoginModal } from '../store/auth'
 import DeleteBasket from "./assets/svg/homepage/deleteBasket.svg"
 import DeleteProduct from "./assets/svg/homepage/deleteProduct.svg"
 
 function ProductCard({ subProduct, subCategory, index }) {
     const { basketList } = useSelector(state => state.basket)
+    const { user } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     const addCart = () => {
-        dispatch(actionAddBasket(subProduct));
+        if (user) {
+            dispatch(actionAddBasket(subProduct));
+        }
+        else {
+            dispatch(actionLoginModal(true))
+        }
     }
     const removeCart = () => {
         dispatch(actionRemoveBasket(subProduct));

@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
+import Cookie from 'js-cookie'
 
+const cookieUser = Cookie.get('user')
 const initialState = {
-    user: false,
+    user: cookieUser || false,//cookiede varsa true yoksa default false yap,
     signupModal: false,
     loginModal: false,
     profileModal: false
@@ -13,9 +15,11 @@ const auth = createSlice({
     reducers: {
         login: state => {
             state.user = true
+            Cookie.set('user', true)
         },
         logout: state => {
             state.user = false
+            Cookie.remove('user')
         },
         actionSignupModal: (state, action) => {
             state.signupModal = action.payload
