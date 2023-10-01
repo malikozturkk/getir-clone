@@ -7,12 +7,12 @@ import Image from 'next/image'
 import ArrowDown from "./assets/svg/navbar/arrowDown.svg"
 import ArrowRight from "./assets/svg/header/arrowRight.svg"
 import { useState, useEffect } from 'react'
-import { actionSelectedSubCategory, actionSelectedCategory, actionSelectedCategories } from '../store/products'
-import { useDispatch } from "react-redux"
+import { actionSelectedSubCategory, actionSelectedCategory, actionSelectedCategories, actionSelectedCategorySlug } from '../store/products'
+import { useDispatch, useSelector } from "react-redux"
 function Categories({ id }) {
   const [products, setProducts] = useState([])
   const { t } = useTranslation()
-  const [showCollapse, setShowCollapse] = useState("yeni-urunler")
+  const { selectedCategorySlug } = useSelector(state => state.products)
   const dispatch = useDispatch()
   const [subIndex, setSubIndex] = useState(0)
   useEffect(() => {
@@ -35,11 +35,11 @@ function Categories({ id }) {
               dispatch(actionSelectedCategories(product.subCategories))
             }
             return (
-              <Link href={`/${product?.slug}`} key={index} className={`${styles.panel} ${showCollapse === product.slug ? styles.active : ''}`}>
+              <Link href={`/${product?.slug}`} key={index} className={`${styles.panel} ${selectedCategorySlug === product.slug ? styles.active : ''}`}>
                 <div
                   className={styles.panelHeaderWrapper}
                   onClick={() => {
-                    setShowCollapse(product.slug === showCollapse ? false : product.slug)
+                    dispatch(actionSelectedCategorySlug(product.slug === selectedCategorySlug ? false : product.slug))
                     setSubIndex(0)
                   }}
                 >
@@ -67,7 +67,7 @@ function Categories({ id }) {
                     </span>
                   </div>
                 </div>
-                {showCollapse === product.slug &&
+                {selectedCategorySlug === product.slug &&
                   <div key={index} className={styles.panelBody}>
                     {product.subCategories.map((subCategory, index) => {
                       if (subIndex === subCategory.id) {
