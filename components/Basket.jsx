@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import ProductCounter from "./assets/svg/homepage/productCounter.svg"
 import DeleteBasket from "./assets/svg/homepage/deleteBasket.svg"
 import DeleteProduct from "./assets/svg/homepage/deleteProduct.svg"
+import Link from 'next/link'
 
 function Basket() {
   const { t } = useTranslation()
@@ -55,7 +56,7 @@ function Basket() {
                 ))}
               </div>
               <div className={styles.goToCartMain}>
-                <button className={styles.gotToCart}>Sepete git</button>
+                <Link className={styles.gotToCart} href='/sepet'>Sepete git</Link>
                 <div className={styles.totalPrice}>₺{parseFloat(basketTotalAmount).toFixed(2)}</div>
               </div>
             </article>

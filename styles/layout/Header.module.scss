@@ -425,5 +425,321 @@
             flex: 1 1 0%;
             display: flex;
         }
+
+        .headerBasketWrapper {
+            flex: 1 1 0%;
+            display: flex;
+
+            .headerBasketContainer {
+                margin-left: auto;
+                background-color: #f3f0fe;
+                position: relative;
+                display: inline-flex;
+                height: 40px;
+                user-select: none;
+                border-radius: 4px;
+                z-index: calc(15);
+
+                .headerBasketMain {
+                    display: inline-flex;
+                    align-items: center;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    .headerBasketFigure {
+                        background-color: rgb(255, 255, 255);
+                        width: 40px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        margin: 0;
+
+                        .headerBasketImage {
+                            object-fit: none;
+                            border-radius: 0px;
+                            background: transparent;
+                            animation: auto ease 0s 1 normal none running none;
+                        }
+                    }
+
+                    .headerBasketAmount {
+                        flex-grow: 1;
+                        color: #5d3ebc;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 18px;
+                        white-space: nowrap;
+                    }
+                }
+
+                .headerBasketModal {
+                    width: 390px;
+                    position: absolute;
+                    top: 100%;
+                    right: 0px;
+                    z-index: 2;
+                    box-shadow: rgba(93, 62, 188, 0.04) 0px 6px 24px;
+
+                    .headerBasketModalMain {
+                        .headerBasketArticle {
+                            border-radius: 4px 0px 4px 4px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: stretch;
+                            background-color: rgb(255, 255, 255);
+
+                            .headerBasketListProduct {
+                                max-height: calc(100vh - 300px);
+                                overflow-y: auto;
+                                min-height: 100px;
+                                display: flex;
+                                flex-direction: column;
+                                border-top: 1px solid #f3f0fe;
+                                border-bottom: 1px solid #f3f0fe;
+
+                                .productMain {
+                                    padding: 16px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+
+                                    .productInfo {
+                                        display: inline-flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        font-size: 14px;
+
+                                        .productName {
+                                            line-height: 18px;
+                                            color: rgb(57, 57, 57);
+                                            margin-bottom: 4px;
+                                            overflow-wrap: anywhere;
+                                            overflow: hidden;
+                                        }
+
+                                        .productPrice {
+                                            font-weight: 600;
+                                            line-height: 18px;
+                                            color: #5d3ebc;
+                                        }
+                                    }
+
+                                    .counterMain {
+                                        flex-shrink: 0;
+                                        display: flex;
+                                        align-items: center;
+                                        border: 1px solid rgba(0, 0, 0, 0.08);
+                                        border-radius: 8px;
+                                        overflow: hidden;
+                                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+                                        .deleteMain {
+                                            border-top-right-radius: 0px;
+                                            border-bottom-right-radius: 0px;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            flex-shrink: 0;
+                                            background: rgb(255, 255, 255);
+                                            width: 32px;
+                                            height: 32px;
+                                            border-radius: 0px;
+                                            user-select: none;
+                                            color: rgb(93, 62, 188);
+                                            border: 0px;
+                                            padding: 0px;
+                                            overflow: initial;
+
+                                            .deleteButton {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 0px;
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                font-weight: 600;
+                                                line-height: 16px;
+                                                outline: 0px;
+                                                border-width: 0px;
+                                                border-style: initial;
+                                                border-image: initial;
+                                                cursor: pointer;
+                                                background-color: inherit;
+                                                color: inherit;
+                                                border-color: inherit;
+
+                                                .deleteProduct {
+                                                    display: inline-flex;
+                                                    pointer-events: none;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    min-width: 24px;
+                                                    min-height: 24px;
+
+                                                    svg {
+                                                        fill: currentcolor;
+                                                        width: 10px;
+                                                        height: 10px;
+                                                    }
+                                                }
+
+                                                .removeProduct {
+                                                    pointer-events: none;
+                                                    display: inline-flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    min-width: 24px;
+                                                    min-height: 24px;
+
+                                                    svg {
+                                                        fill: currentColor;
+                                                        width: 18px;
+                                                        height: 18px;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .productPieceMain {
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            background-color: #5d3ebc;
+                                            color: #fff;
+                                            width: 32px;
+                                            height: 32px;
+
+                                            .productPiece {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                            }
+                                        }
+
+                                        .addMain {
+                                            border-top-left-radius: 0px;
+                                            border-bottom-left-radius: 0px;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            flex-shrink: 0;
+                                            background: rgb(255, 255, 255);
+                                            width: 32px;
+                                            height: 32px;
+                                            border-radius: 0px;
+                                            user-select: none;
+                                            color: rgb(93, 62, 188);
+                                            border: 0px;
+                                            padding: 0px;
+                                            overflow: initial;
+
+                                            .addButton {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 0px;
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                font-weight: 600;
+                                                line-height: 16px;
+                                                outline: 0px;
+                                                border-width: 0px;
+                                                border-style: initial;
+                                                border-image: initial;
+                                                cursor: pointer;
+                                                background-color: inherit;
+                                                color: inherit;
+                                                border-color: inherit;
+
+                                                .addProduct {
+                                                    pointer-events: none;
+                                                    display: inline-flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    min-width: 24px;
+                                                    min-height: 24px;
+
+                                                    svg {
+                                                        fill: currentcolor;
+                                                        width: 10px;
+                                                        height: 10px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .productMain:not(:last-child) {
+                                    border-bottom: 1px solid rgb(244, 244, 244);
+                                }
+                            }
+
+                            .headerBasketRedirect {
+                                padding: 0px;
+                                margin: 24px 16px;
+                                user-select: none;
+                                display: inline-flex;
+                                border-radius: 8px;
+                                overflow: hidden;
+                                border: 2px solid rgb(93, 62, 188);
+                                background-color: rgb(93, 62, 188);
+                                color: rgb(255, 255, 255);
+                                box-shadow: rgba(105, 116, 136, 0.15) 0px 2px 6px;
+
+                                .headerBasketRedirectButton {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 600;
+                                    line-height: 16px;
+                                    padding: 14px 16px;
+                                    outline: 0px;
+                                    border-width: 0px;
+                                    border-style: initial;
+                                    border-image: initial;
+                                    cursor: pointer;
+                                    background-color: inherit;
+                                    color: inherit;
+                                    border-color: inherit;
+                                }
+
+                                .headerBasketTotalAmount {
+                                    padding-left: 18px;
+                                    padding-right: 18px;
+                                    color: rgb(93, 62, 188);
+                                    background-color: rgb(255, 255, 255);
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .headerBasketActive {
+                border-radius: 4px 4px 0px 0px;
+            }
+
+            .headerBasketActive::before {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: -12px;
+                width: 12px;
+                height: 12px;
+                background-image: radial-gradient(circle at left top, transparent 0%, transparent 12px, white 12px);
+            }
+        }
     }
 }

@@ -85,3 +85,11 @@ ul {
   z-index: 14;
   background-color: rgba(24, 17, 45, 0.72);
 }
+
+.showBasketModal::after {
+  content: "";
+  position: fixed;
+  inset: 0px;
+  z-index: 14;
+  background-color: rgba(24, 17, 45, 0.72);
+}
