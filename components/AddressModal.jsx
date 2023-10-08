@@ -10,7 +10,7 @@ import { languageList } from '../data/LanguageList'
 import { useTranslation } from "react-i18next"
 import { actionAddressModal, actionAddAddressModal } from '../store/address'
 
-function LanguageModal() {
+function AddressModal() {
     const { addressList, selectedAddress } = useSelector(state => state.address)
     const [selectedRadio, setSelectedRadio] = useState(JSON.parse(selectedAddress)[0].id)
 
@@ -77,4 +77,4 @@ function LanguageModal() {
     )
 }
 
-export default LanguageModal
+export default AddressModal

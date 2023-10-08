@@ -43,9 +43,14 @@ const basket = createSlice({
             state.basketList = state.basketList.filter((basket) => basket.id !== action.payload.id)
             localStorage.setItem("totalPrice", JSON.stringify(state.basketTotalAmount))
             localStorage.setItem("basketList", JSON.stringify(state.basketList))
+        },
+        actionClearBasket: (state) => {
+            localStorage.removeItem('totalPrice')
+            localStorage.removeItem('basketList')
+            state.basketList = []
         }
     }
 })
 
-export const { actionAddBasket, actionDeleteBasket, actionRemoveBasket } = basket.actions
+export const { actionAddBasket, actionDeleteBasket, actionRemoveBasket, actionClearBasket } = basket.actions
 export default basket.reducer

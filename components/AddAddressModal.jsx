@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux"
 import { useTranslation } from "react-i18next"
 import { actionAddAddressModal } from '../store/address'
 
-function LanguageModal() {
+function AddAddressModal() {
     const { t } = useTranslation()
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
@@ -139,4 +139,4 @@ function LanguageModal() {
     )
 }
 
-export default LanguageModal
+export default AddAddressModal
