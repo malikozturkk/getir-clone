@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from "next/router"
 import Basket from "../components/Basket"
-import ProductList from "../components/ProductList"
+import ProductDataList from '../components/ProductDataList'
 import InfoWrapper from "../components/infoWrapper"
 import Sliders from "../components/Slider"
 import Categories from "../components/Categories"
@@ -22,7 +22,7 @@ function Category() {
                             <Categories id={id} />
                         </div>
                         <div className={home.productList}>
-                            <ProductList id={id} />
+                            <ProductDataList id={id} />
                         </div>
                         <div className={home.basket}>
                             <Basket />
