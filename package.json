@@ -28,6 +28,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1"
+    "@svgr/webpack": "^6.5.1",
+    "concurrently": "^9.1.2"
   }
 }

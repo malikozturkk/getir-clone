@@ -63,7 +63,7 @@ function ProductList({ id }) {
                                   selectSubCategories.map((selectSubCategory, index) => {
                                     if (selectSubCategory.name === subCategory.name) {
                                       return (
-                                        <ProductCard subProduct={subProduct} subCategory={subCategory} index={index} />
+                                        <ProductCard key={index} subProduct={subProduct} subCategory={subCategory} index={index} />
                                       )
                                     }
                                   })

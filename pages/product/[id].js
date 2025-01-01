@@ -14,9 +14,9 @@ function Product() {
             return (
                 subCategories.subCategories?.map((subCategory) => {
                     return (
-                        subCategory.products?.map((product) => {
+                        subCategory.products?.map((product, index) => {
                             return (
-                                <ProductDetails id={id} product={product} />
+                                <ProductDetails key={index} id={id} product={product} />
                             )
                         })
                     )
