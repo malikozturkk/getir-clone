@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
-
-module.exports = {
+  images: {
+    domains: ['localhost', 'cdn.getir.com'],
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.getir.com',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -13,3 +21,5 @@ module.exports = {
     return config;
   }
 };
+
+module.exports = nextConfig;

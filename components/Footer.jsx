@@ -238,6 +238,8 @@ function Footer() {
                         >
                             <figure className={footer.etbisFigure}>
                                 <Image
+                                    width={120}
+                                    height={120}
                                     src="https://cdn.getir.com/getirweb-images/common/etbis.png"
                                     alt="ETBIS Logo"
                                 />
