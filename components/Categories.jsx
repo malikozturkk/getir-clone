@@ -6,22 +6,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ArrowDown from "./assets/svg/navbar/arrowDown.svg"
 import ArrowRight from "./assets/svg/header/arrowRight.svg"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { products as Products } from '../data/products'
 import { actionSelectedSubCategory, actionSelectedCategory, actionSelectedCategories, actionSelectedCategorySlug } from '../store/products'
 import { useDispatch, useSelector } from "react-redux"
 function Categories({ id }) {
-  const [products, setProducts] = useState([])
+  const products = Products.products
   const { t } = useTranslation()
   const { selectedCategorySlug } = useSelector(state => state.products)
   const dispatch = useDispatch()
   const [subIndex, setSubIndex] = useState(0)
-  useEffect(() => {
-    fetch('http://localhost:3001/products')
-      .then(data => data.json())
-      .then(data => {
-        setProducts(data)
-      });
-  }, [])
   return (
     <div className={styles.wrapper}>
       <div className={styles.category}>

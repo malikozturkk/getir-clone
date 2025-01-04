@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/layout/FavoriteSearch.module.scss"
-import { getProduct } from '../utils/getProduct'
 
 const FavoriteSearch = () => {
     const favoriteProduct =

@@ -8,7 +8,6 @@ function Product() {
     const router = useRouter()
     const { id } = router.query
     const { productsList } = useSelector(state => state.products)
-    console.log(id, 'id')
     return (
         productsList.map((subCategories) => {
             return (

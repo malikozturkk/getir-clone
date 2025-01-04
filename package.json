@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"cd api && npm run start\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -28,7 +28,6 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1",
-    "concurrently": "^9.1.2"
+    "@svgr/webpack": "^6.5.1"
   }
 }
