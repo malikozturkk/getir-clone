@@ -10,100 +10,124 @@ import { actionAddBasket, actionDeleteBasket, actionRemoveBasket } from '../stor
 import { useDispatch, useSelector } from 'react-redux'
 
 function SearchResult({ inputValue, setShowFavoriteSearch, setInputValue }) {
-    const { basketList } = useSelector(state => state.basket)
-    const data = Products.products
-    const [products, setProduct] = useState([])
-    const dispatch = useDispatch()
-    const body = document.querySelector("body")
+    const { basketList } = useSelector((state) => state.basket);
+    const data = Products.products;
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const allProducts = data.flatMap((categories) =>
+            categories.subCategories.flatMap((category) => category.products || [])
+        );
+
+        if (inputValue) {
+            const lowercasedInput = inputValue.toLowerCase();
+            const results = allProducts.filter((product) =>
+                product.name.toLowerCase().includes(lowercasedInput)
+            );
+            setFilteredProducts(results);
+        } else {
+            setFilteredProducts([]);
+        }
+    }, [inputValue, data]);
+
     const removeCart = (product) => {
         dispatch(actionRemoveBasket(product));
-    }
+    };
+
     const deleteCart = (product) => {
         dispatch(actionDeleteBasket(product));
-    }
+    };
+
+    const handleCloseSearch = () => {
+        setInputValue('');
+        setShowFavoriteSearch(false);
+        document.body.classList.remove('showFavoriteSearch');
+    };
 
     return (
         <div className={styles.resultMain}>
-            {data.map((categories) => {
-                return (
-                    categories.subCategories.map((category) => {
-                        return (
-                            category.products?.map((product) => {
-                                products.push(product)
-                                return (
-                                    <>
-                                        {products.filter(item => {
-                                            const searchTerm = inputValue.toLowerCase()
-                                            const fullName = item.name.toLowerCase()
-                                            return searchTerm && fullName.indexOf(searchTerm) !== -1
-                                        })
-                                            .map((product, index) => (
-                                                <div className={styles.resultItem} key={index}>
-                                                    <div className={styles.searchedProduct}>
-                                                        <Link href={`/product/${product?.id}`} className={styles.productButton} onClick={() => {
-                                                            setInputValue('')
-                                                            setShowFavoriteSearch(false)
-                                                            body.classList.remove("showFavoriteSearch")
-                                                        }}>
-                                                            <div className={styles.searchedMain}>
-                                                                <figure className={styles.searchedFigure}>
-                                                                    <Image src={`/products/${product?.images}`} width={32} height={32} alt={product.name} />
-                                                                </figure>
-                                                                <div className={styles.searchedInfo}>
-                                                                    <h1 className={styles.productTitle}>
-                                                                        <span className={styles.name}>{product.name}</span>
-                                                                    </h1>
-                                                                    <span className={styles.productInfo}>{product.shortDescription}</span>
-                                                                    <span className={styles.productPrice}>{product.priceText}</span>
-                                                                </div>
-                                                            </div>
-                                                        </Link>
-                                                    </div>
-                                                    <div className={styles.counterMain}>
-                                                        <div className={styles.counterContainer}>
-                                                            <button className={styles.counterButton} onClick={() => dispatch(actionAddBasket(product))}>
-                                                                <div className={styles.counterIcon}>
-                                                                    <ProductCounter />
-                                                                </div>
-                                                            </button>
-                                                            {basketList.map((basket, index) => {
-                                                                return (
-                                                                    basket.id === product.id && basket.basketItemCount > 0 &&
-                                                                    <>
-                                                                        {basket.basketItemCount <= 1 ?
-                                                                            <div className={styles.removeProduct} key={index}>
-                                                                                <button type="button" className={styles.removeButton} onClick={removeCart}>
-                                                                                    <div className={styles.removeButtonMain}>
-                                                                                        <DeleteBasket />
-                                                                                    </div>
-                                                                                </button>
-                                                                            </div>
-                                                                            :
-                                                                            <div className={styles.deleteProduct}>
-                                                                                <button type="button" className={styles.deleteButton} onClick={deleteCart}>
-                                                                                    <div className={styles.deleteButtonMain}>
-                                                                                        <DeleteProduct />
-                                                                                    </div>
-                                                                                </button>
-                                                                            </div>
-                                                                        }
-                                                                        <div className={styles.productCount}>{basket.basketItemCount}</div>
-                                                                    </>
-                                                                )
-                                                            })}
+            {filteredProducts.map((product) => (
+                <div className={styles.resultItem} key={product.id}>
+                    <div className={styles.searchedProduct}>
+                        <Link
+                            href={`/product/${product.id}`}
+                            className={styles.productButton}
+                            onClick={handleCloseSearch}
+                        >
+                            <div className={styles.searchedMain}>
+                                <figure className={styles.searchedFigure}>
+                                    <Image
+                                        src={`/products/${product.images}`}
+                                        width={32}
+                                        height={32}
+                                        alt={product.name}
+                                    />
+                                </figure>
+                                <div className={styles.searchedInfo}>
+                                    <h1 className={styles.productTitle}>
+                                        <span className={styles.name}>{product.name}</span>
+                                    </h1>
+                                    <span className={styles.productInfo}>
+                                        {product.shortDescription}
+                                    </span>
+                                    <span className={styles.productPrice}>{product.priceText}</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className={styles.counterMain}>
+                        <div className={styles.counterContainer}>
+                            <button
+                                className={styles.counterButton}
+                                onClick={() => dispatch(actionAddBasket(product))}
+                            >
+                                <div className={styles.counterIcon}>
+                                    <ProductCounter />
+                                </div>
+                            </button>
+                            {basketList.map(
+                                (basket, index) =>
+                                    basket.id === product.id &&
+                                    basket.basketItemCount > 0 && (
+                                        <React.Fragment key={index}>
+                                            {basket.basketItemCount <= 1 ? (
+                                                <div className={styles.removeProduct}>
+                                                    <button
+                                                        type="button"
+                                                        className={styles.removeButton}
+                                                        onClick={() => removeCart(product)}
+                                                    >
+                                                        <div className={styles.removeButtonMain}>
+                                                            <DeleteBasket />
                                                         </div>
-                                                    </div>
+                                                    </button>
                                                 </div>
-                                            ))}
-                                    </>
-                                )
-                            })
-                        )
-                    })
-                )
-            })}
+                                            ) : (
+                                                <div className={styles.deleteProduct}>
+                                                    <button
+                                                        type="button"
+                                                        className={styles.deleteButton}
+                                                        onClick={() => deleteCart(product)}
+                                                    >
+                                                        <div className={styles.deleteButtonMain}>
+                                                            <DeleteProduct />
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                            )}
+                                            <div className={styles.productCount}>
+                                                {basket.basketItemCount}
+                                            </div>
+                                        </React.Fragment>
+                                    )
+                            )}
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
-    )
+    );
 }
 
-export default SearchResult
+export default SearchResult;
